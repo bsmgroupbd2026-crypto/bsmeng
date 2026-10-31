@@ -9,7 +9,7 @@ export function About() {
     <section id="about" className="relative overflow-hidden bg-background py-24 lg:py-36">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-12 lg:px-10">
         <Reveal className="relative lg:col-span-7">
-          <div className="aspect-[4/5] overflow-hidden sm:aspect-[5/4] lg:mr-16">
+          <div className="aspect-[4/5] overflow-hidden rounded-tr-[6rem] rounded-bl-[6rem] sm:aspect-[5/4] lg:mr-16">
             <img src={real.blueprint} alt="Engineers reviewing building plans on site" className="h-full w-full object-cover" loading="lazy" />
           </div>
           <div className="absolute -bottom-10 right-0 hidden w-[42%] border-8 border-background shadow-2xl sm:block">
