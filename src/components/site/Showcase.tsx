@@ -34,7 +34,7 @@ export function Engineering() {
             <p className="eyebrow text-brand-light">02 — Services</p>
             <h2 className="mt-5 font-display text-5xl font-extrabold leading-none text-on-dark sm:text-6xl">Engineering<br />& Construction</h2>
           </div>
-          <p className="max-w-sm text-on-dark-muted lg:ml-auto">Hover a service to explore — one team for every trade on your site.</p>
+          <p className="max-w-sm text-on-dark-muted lg:ml-auto">An in-house team of BCA CoreTrade masons, electricians, plumbers, partition and false ceiling specialists — for commercial, office, HDB and residential sites.</p>
         </Reveal>
 
         <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr]">
@@ -151,6 +151,37 @@ export function Industries() {
               </button>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Testimonials (from bsmengg.com) ---------- */
+const quotes = [
+  { n: "Mr Wong", i: "https://bsmengg.com/wp-content/uploads/2024/10/Client-1.jpg.webp", q: "BSM Engineering has been fantastic in providing skilled and reliable workers. Their efficiency and professionalism make them our go-to for manpower needs. Highly recommended!" },
+  { n: "Faizal", i: "https://bsmengg.com/wp-content/uploads/2024/10/Client-2.png.webp", q: "We hired them to do our ceiling work and are quite happy to work with them. They are very professional, efficient, and delivered excellent results." },
+  { n: "Jacob Tan", i: "https://bsmengg.com/wp-content/uploads/2024/10/Client-3.jpg.webp", q: "Great work! We hired them to handle our glass roof project, and they did an excellent job. The work was completed on time, with high quality and professionalism." },
+];
+export function Testimonials() {
+  return (
+    <section className="bg-slate-deep py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <Reveal><p className="eyebrow text-brand-light">Testimonial</p>
+          <h2 className="mt-5 font-display text-5xl font-extrabold text-on-dark">What our clients say</h2></Reveal>
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          {quotes.map((x, k) => (
+            <Reveal key={x.n} delay={k * 120}>
+              <figure className={cn("relative flex h-full flex-col rounded-tr-[3rem] border border-on-dark/10 p-10", k === 1 ? "bg-brand" : "bg-navy")}>
+                <span className="font-display text-8xl leading-none text-brand-light/40">“</span>
+                <blockquote className="-mt-6 flex-1 text-lg leading-relaxed text-on-dark">{x.q}</blockquote>
+                <figcaption className="mt-8 flex items-center gap-4 border-t border-on-dark/15 pt-6">
+                  <img src={x.i} alt={x.n} loading="lazy" className="h-12 w-12 rounded-full object-cover" />
+                  <span className="font-display font-bold text-on-dark">{x.n}</span>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

@@ -16,6 +16,8 @@ export const contact = {
   address: ["5 Soon Lee St, #04-49", "Pioneer Point, S-627607"],
   hours: "Mon – Sat : 8 AM – 5 PM",
   emails: ["enquiry@bsmengg.com", "bsmengineering1@gmail.com"],
+  phone: "(+65) 6980 0553",
+  tel: "+6569800553",
 };
 
 function InfoItem({ icon: Icon, title, lines }: { icon: typeof MapPin; title: string; lines: string[] }) {
@@ -41,7 +43,7 @@ export function Header() {
         </div>
         <div className="flex flex-1 items-center justify-end gap-12 pr-[max(1.5rem,calc((100vw-80rem)/2+2.5rem))]">
           <a href="#contact" className="flex items-center gap-2 hover:text-brand-light"><Mail className="h-4 w-4" /> Send Enquiry</a>
-          <a href="#contact" className="flex items-center gap-2 hover:text-brand-light"><Phone className="h-4 w-4" /> Call Us Today!</a>
+          <a href={`tel:${contact.tel}`} className="flex items-center gap-2 hover:text-brand-light"><Phone className="h-4 w-4" /> Call Us Today! {contact.phone}</a>
         </div>
       </div>
 
