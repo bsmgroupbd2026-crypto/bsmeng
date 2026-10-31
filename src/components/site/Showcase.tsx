@@ -34,7 +34,7 @@ export function Engineering() {
             <p className="eyebrow text-brand-light">02 — Services</p>
             <h2 className="mt-5 font-display text-5xl font-extrabold leading-none text-on-dark sm:text-6xl">Engineering<br />& Construction</h2>
           </div>
-          <p className="max-w-sm text-on-dark-muted lg:ml-auto">An in-house team of BCA CoreTrade specialists for every trade on your site.</p>
+          <p className="max-w-sm text-on-dark-muted lg:ml-auto">Hover a service to explore — one team for every trade on your site.</p>
         </Reveal>
 
         <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr]">
