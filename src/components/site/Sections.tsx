@@ -1,7 +1,7 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/bsm-logo.jpeg.asset.json";
 import { Reveal } from "./Reveal";
-export { Engineering, WhyBSM, Industries } from "./Showcase";
+export { Engineering, WhyBSM, Industries, Testimonials } from "./Showcase";
 import { real, img, manpower, engineering, industries, work } from "./data";
 
 /* ---------- About ---------- */
@@ -116,14 +116,26 @@ export function Projects() {
 
 /* ---------- Credentials ---------- */
 export function Credentials() {
+  const certs = [
+    { k: "ISO", t: "ISO 9001:2015", d: "Quality management" },
+    { k: "bizSAFE", t: "bizSAFE Star", d: "Workplace safety" },
+    { k: "BCA", t: "BCA Registered", d: "CoreTrade tradesmen" },
+    { k: "GeBIZ", t: "GeBIZ Trading Partner", d: "Government procurement" },
+  ];
   return (
-    <section className="border-b bg-offwhite py-16">
-      <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 md:grid-cols-[auto_1fr] lg:px-10">
-        <p className="eyebrow">Credentials</p>
-        <div className="flex flex-wrap items-center gap-x-12 gap-y-4 font-display text-lg font-bold text-navy/80">
-          <span>BCA CoreTrade Tradesmen</span>
-          <span className="h-6 w-px bg-border" />
-          <span className="text-sm font-medium text-muted-foreground">Verified certification logos will appear here.</span>
+    <section className="bg-offwhite py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div><p className="eyebrow">We are certified by</p><h2 className="mt-4 font-display text-4xl font-extrabold">Credentials you can trust</h2></div>
+        </div>
+        <div className="mt-10 grid grid-cols-2 border-l border-t border-border lg:grid-cols-4">
+          {certs.map((c) => (
+            <div key={c.t} className="group border-b border-r border-border bg-background p-8 transition hover:bg-navy">
+              <span className="font-display text-3xl font-extrabold text-brand group-hover:text-brand-light">{c.k}</span>
+              <p className="mt-6 font-display font-bold group-hover:text-on-dark">{c.t}</p>
+              <p className="text-sm text-muted-foreground group-hover:text-on-dark-muted">{c.d}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -179,6 +191,7 @@ export function Footer() {
             <li className="flex gap-3"><MapPin className="h-4 w-4 shrink-0 text-brand" /> 5 Soon Lee St, #04-49, Pioneer Point, Singapore 627607</li>
             <li className="flex gap-3"><Phone className="h-4 w-4 shrink-0 text-brand" /> Mon – Sat : 8 AM – 5 PM</li>
             <li className="flex gap-3"><Mail className="h-4 w-4 shrink-0 text-brand" /> enquiry@bsmengg.com</li>
+            <li><a href="tel:+6569800553" className="font-display text-lg font-bold text-on-dark hover:text-brand-light">(+65) 6980 0553</a></li>
           </ul>
           <div className="mt-6 flex gap-4 text-sm font-semibold text-on-dark"><a href="#">LinkedIn</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div>
         </div>
