@@ -6,6 +6,7 @@ import { slides } from "./data";
 export function Hero() {
   const [i, setI] = useState(0);
   const go = useCallback((d: number) => setI((p) => (p + d + slides.length) % slides.length), []);
+  const cur = slides[i] ?? slides[0]!;
   useEffect(() => { const t = setTimeout(() => go(1), 6500); return () => clearTimeout(t); }, [i, go]);
 
   return (
@@ -19,11 +20,11 @@ export function Hero() {
 
       <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-20 lg:px-10">
         <div key={i} className="max-w-3xl animate-in fade-in slide-in-from-bottom-6 duration-1000">
-          <p className="eyebrow mb-6 text-brand-light">{slides[i].kicker}</p>
+          <p className="eyebrow mb-6 text-brand-light">{cur.kicker}</p>
           <h1 className="font-display text-5xl font-extrabold leading-[1.02] text-on-dark sm:text-6xl lg:text-[5.5rem]">
-            {slides[i].title[0]}<br /><span className="text-brand-light">{slides[i].title[1]}</span>
+            {cur.title[0]}<br /><span className="text-brand-light">{cur.title[1]}</span>
           </h1>
-          <p className="mt-6 max-w-lg text-lg text-on-dark-muted">{slides[i].text}</p>
+          <p className="mt-6 max-w-lg text-lg text-on-dark-muted">{cur.text}</p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="#services" className="bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition hover:bg-brand">Explore Services</a>
             <a href="#contact" className="border border-on-dark/40 px-7 py-4 text-sm font-semibold text-on-dark transition hover:bg-on-dark hover:text-navy">Request a Quote</a>
