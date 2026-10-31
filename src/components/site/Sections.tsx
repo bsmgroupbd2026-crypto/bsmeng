@@ -64,7 +64,7 @@ export function Services() {
           <Reveal delay={100}><p className="max-w-md text-lg text-muted-foreground lg:ml-auto">Skilled, safety-trained personnel for construction and industrial sites.</p></Reveal>
         </div>
         <div className="grid auto-rows-[220px] grid-cols-2 gap-3 md:auto-rows-[260px] md:grid-cols-4">
-          <Tile name={manpower[0].name} image={real.manpower} index="01" className="col-span-2 row-span-2" />
+          <Tile name={"Construction Workers"} image={real.manpower} index="01" className="col-span-2 row-span-2" />
           {manpower.slice(1).map((m, k) => (
             <Tile key={m.name} name={m.name} image={m.image} index={`0${k + 2}`} className={k === 0 ? "md:col-span-2" : ""} />
           ))}
@@ -142,7 +142,7 @@ export function WhyBSM() {
 
 /* ---------- Industries ---------- */
 export function Industries() {
-  const [a, b, c, d, e] = industries;
+  const [a, b, c, d, e] = industries as [typeof industries[number], typeof industries[number], typeof industries[number], typeof industries[number], typeof industries[number]];
   const Item = ({ x, cls }: { x: typeof a; cls: string }) => (
     <div className={`group relative overflow-hidden ${cls}`}>
       <img src={x.image} alt={x.name} loading="lazy" className="img-zoom h-full w-full object-cover group-hover:scale-105" />
