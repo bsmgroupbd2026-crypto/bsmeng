@@ -272,9 +272,9 @@ export function Footer() {
         <div>
           <h4 className="mb-5 font-display text-sm font-bold uppercase tracking-[0.2em] text-on-dark">Contact</h4>
           <ul className="space-y-3 text-sm">
-            <li className="flex gap-3"><MapPin className="h-4 w-4 shrink-0 text-brand" /> Singapore</li>
-            <li className="flex gap-3"><Phone className="h-4 w-4 shrink-0 text-brand" /> +65 ____ ____</li>
-            <li className="flex gap-3"><Mail className="h-4 w-4 shrink-0 text-brand" /> info@bsmengg.com</li>
+            <li className="flex gap-3"><MapPin className="h-4 w-4 shrink-0 text-brand" /> 5 Soon Lee St, #04-49, Pioneer Point, Singapore 627607</li>
+            <li className="flex gap-3"><Phone className="h-4 w-4 shrink-0 text-brand" /> Mon – Sat : 8 AM – 5 PM</li>
+            <li className="flex gap-3"><Mail className="h-4 w-4 shrink-0 text-brand" /> enquiry@bsmengg.com</li>
           </ul>
           <div className="mt-6 flex gap-4 text-sm font-semibold text-on-dark"><a href="#">LinkedIn</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div>
         </div>

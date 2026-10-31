@@ -18,7 +18,7 @@ export function Hero() {
         </div>
       ))}
 
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-20 lg:px-10">
+      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-10 lg:px-10">
         <div key={i} className="max-w-3xl animate-in fade-in slide-in-from-bottom-6 duration-1000">
           <p className="eyebrow mb-6 text-brand-light">{cur.kicker}</p>
           <h1 className="font-display text-5xl font-extrabold leading-[1.02] text-on-dark sm:text-6xl lg:text-[5.5rem]">
