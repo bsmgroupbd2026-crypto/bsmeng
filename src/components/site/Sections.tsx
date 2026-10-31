@@ -1,6 +1,7 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/bsm-logo.jpeg.asset.json";
 import { Reveal } from "./Reveal";
+export { Engineering, WhyBSM, Industries } from "./Showcase";
 import { real, img, manpower, engineering, industries, work } from "./data";
 
 /* ---------- About ---------- */
@@ -80,103 +81,6 @@ export function Services() {
         </div>
       </div>
 
-      {/* Engineering – dark split feature */}
-      <div className="bg-navy">
-        <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
-          <div className="grid grid-cols-2 grid-rows-2 gap-3 p-3 lg:p-0 lg:pr-3">
-            <div className="col-span-2 aspect-[16/10] overflow-hidden lg:aspect-auto"><img src={img.ceiling} alt="Ceiling and drywall reinstatement" className="h-full w-full object-cover" loading="lazy" /></div>
-            <div className="aspect-square overflow-hidden lg:aspect-auto"><img src={img.electrical} alt="Bus duct installation" className="h-full w-full object-cover" loading="lazy" /></div>
-            <div className="aspect-square overflow-hidden lg:aspect-auto"><img src={img.warehouse} alt="Mezzanine works" className="h-full w-full object-cover" loading="lazy" /></div>
-          </div>
-          <div className="px-6 py-20 lg:px-16 lg:py-28">
-            <Reveal>
-              <p className="eyebrow text-brand-light">02 — Services</p>
-              <h2 className="mt-5 font-display text-5xl font-extrabold leading-none text-on-dark sm:text-6xl">Engineering<br />& Construction</h2>
-            </Reveal>
-            <ul className="mt-12 border-t border-on-dark/10">
-              {engineering.map((s, k) => (
-                <li key={s} className="group flex items-center justify-between border-b border-on-dark/10 py-4 transition hover:pl-3">
-                  <span className="flex items-baseline gap-5">
-                    <span className="font-display text-xs font-bold text-brand">{String(k + 1).padStart(2, "0")}</span>
-                    <span className="font-display text-xl font-semibold text-on-dark sm:text-2xl">{s}</span>
-                  </span>
-                  <ArrowUpRight className="h-5 w-5 text-brand-light opacity-0 transition group-hover:opacity-100" />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- Why BSM ---------- */
-const reasons = [
-  ["Skilled Workforce", "Trained trades and site professionals ready to deploy."],
-  ["Quality Commitment", "Workmanship that meets handover standards."],
-  ["Safety-Focused Operations", "Safety supervision built into every site."],
-  ["Reliable Project Support", "Responsive coordination from start to finish."],
-];
-export function WhyBSM() {
-  return (
-    <section className="relative overflow-hidden bg-slate-deep">
-      <div className="grid lg:grid-cols-2">
-        <div className="relative min-h-[420px] lg:min-h-[720px]">
-          <img src={img.hero3} alt="Engineers inspecting industrial equipment" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-navy/30" />
-          <p className="absolute bottom-8 left-6 font-display text-[7rem] font-extrabold leading-none text-on-dark/15 lg:left-10 lg:text-[11rem]">BSM</p>
-        </div>
-        <div className="px-6 py-20 lg:px-20 lg:py-28">
-          <Reveal>
-            <p className="eyebrow text-brand-light">Why BSM</p>
-            <h2 className="mt-5 max-w-md font-display text-4xl font-extrabold leading-tight text-on-dark sm:text-5xl">Built on people.<br />Proven on site.</h2>
-          </Reveal>
-          <div className="mt-14 space-y-10">
-            {reasons.map(([t, d], k) => (
-              <Reveal key={t} delay={k * 100} className="grid grid-cols-[auto_1fr] gap-6">
-                <span className="font-display text-4xl font-extrabold text-brand">{String(k + 1).padStart(2, "0")}</span>
-                <div className="border-l border-on-dark/15 pl-6">
-                  <h3 className="font-display text-xl font-bold text-on-dark">{t}</h3>
-                  <p className="mt-1 text-on-dark-muted">{d}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- Industries ---------- */
-export function Industries() {
-  const [a, b, c, d, e] = industries as [typeof industries[number], typeof industries[number], typeof industries[number], typeof industries[number], typeof industries[number]];
-  const Item = ({ x, cls }: { x: typeof a; cls: string }) => (
-    <div className={`group relative overflow-hidden ${cls}`}>
-      <img src={x.image} alt={x.name} loading="lazy" className="img-zoom h-full w-full object-cover group-hover:scale-105" />
-      <div className="absolute inset-0 bg-overlay-tile" />
-      <h3 className="absolute bottom-6 left-6 right-6 font-display text-2xl font-bold leading-tight text-on-dark lg:text-3xl">{x.name}</h3>
-    </div>
-  );
-  return (
-    <section id="industries" className="bg-background py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="eyebrow">Industries</p>
-            <h2 className="mt-5 font-display text-5xl font-extrabold leading-none sm:text-6xl">Sectors we serve</h2>
-          </div>
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">05 Industries</p>
-        </Reveal>
-        <div className="grid auto-rows-[260px] gap-3 md:grid-cols-6 md:auto-rows-[300px]">
-          <Item x={a} cls="md:col-span-4 md:row-span-2 md:h-auto" />
-          <Item x={c} cls="md:col-span-2 md:row-span-2" />
-          <Item x={b} cls="md:col-span-2" />
-          <Item x={d} cls="md:col-span-2" />
-          <Item x={e} cls="md:col-span-2" />
-        </div>
-      </div>
     </section>
   );
 }

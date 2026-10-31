@@ -1,0 +1,158 @@
+import { useState } from "react";
+import { ArrowUpRight, ShieldCheck, Users, Award, Headset } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Reveal } from "./Reveal";
+import { img, real, industries } from "./data";
+import plumbing from "@/assets/svc-plumbing.jpg";
+import waterproof from "@/assets/svc-waterproof.jpg";
+import awning from "@/assets/svc-awning.jpg";
+import hacking from "@/assets/svc-hacking.jpg";
+
+const eng = [
+  { name: "Reinstatement", text: "Restoring offices and commercial spaces to handover condition.", image: img.ceiling },
+  { name: "Electrical Installations", text: "Power, lighting and distribution for commercial and industrial sites.", image: img.electrical },
+  { name: "Ceiling Works", text: "False ceilings, grid systems and finishing.", image: img.ceiling },
+  { name: "Awning Works", text: "Glass and aluminium canopies for shopfronts and entrances.", image: awning },
+  { name: "Plumbing", text: "Piping, sanitary and water systems.", image: plumbing },
+  { name: "Waterproofing", text: "Membrane and liquid systems for roofs and wet areas.", image: waterproof },
+  { name: "Hacking", text: "Controlled hacking and demolition works.", image: hacking },
+  { name: "Drywall Partitions", text: "Fast, clean partitioning for interior layouts.", image: img.ceiling },
+  { name: "Bus Duct Works", text: "Bus duct and cable tray installation.", image: img.electrical },
+  { name: "Mezzanine Works", text: "Steel mezzanine floors for added space.", image: img.warehouse },
+];
+
+/* ---------- Engineering & Construction: interactive showcase ---------- */
+export function Engineering() {
+  const [a, setA] = useState(0);
+  const cur = eng[a] ?? eng[0]!;
+  return (
+    <section className="relative overflow-hidden bg-navy py-24 lg:py-32">
+      <div className="pointer-events-none absolute -right-40 top-0 h-[600px] w-[600px] rounded-full bg-brand/10 blur-3xl" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <Reveal className="mb-14 grid gap-6 lg:grid-cols-2 lg:items-end">
+          <div>
+            <p className="eyebrow text-brand-light">02 — Services</p>
+            <h2 className="mt-5 font-display text-5xl font-extrabold leading-none text-on-dark sm:text-6xl">Engineering<br />& Construction</h2>
+          </div>
+          <p className="max-w-sm text-on-dark-muted lg:ml-auto">Hover a service to explore — one team for every trade on your site.</p>
+        </Reveal>
+
+        <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr]">
+          {/* Big image */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-tr-[5rem] rounded-bl-[5rem] lg:aspect-auto lg:min-h-[620px]">
+            {eng.map((e, i) => (
+              <img key={e.name} src={e.image} alt={e.name} loading="lazy"
+                className={cn("absolute inset-0 h-full w-full object-cover transition-all duration-700", i === a ? "scale-100 opacity-100" : "scale-105 opacity-0")} />
+            ))}
+            <div className="absolute inset-0 bg-overlay-tile" />
+            <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+              <span className="font-display text-7xl font-extrabold leading-none text-on-dark/20 lg:text-9xl">{String(a + 1).padStart(2, "0")}</span>
+              <h3 className="-mt-6 font-display text-3xl font-bold text-on-dark lg:text-4xl">{cur.name}</h3>
+              <p className="mt-2 max-w-md text-on-dark-muted">{cur.text}</p>
+            </div>
+          </div>
+
+          {/* Service list */}
+          <ul className="grid content-center">
+            {eng.map((e, i) => (
+              <li key={e.name}>
+                <button onMouseEnter={() => setA(i)} onFocus={() => setA(i)} onClick={() => setA(i)}
+                  className={cn("group flex w-full items-center justify-between border-b border-on-dark/10 py-4 text-left transition-all", i === a && "border-brand pl-4")}>
+                  <span className="flex items-baseline gap-5">
+                    <span className={cn("font-display text-xs font-bold", i === a ? "text-brand-light" : "text-on-dark/40")}>{String(i + 1).padStart(2, "0")}</span>
+                    <span className={cn("font-display text-xl font-semibold transition sm:text-2xl", i === a ? "text-on-dark" : "text-on-dark/55")}>{e.name}</span>
+                  </span>
+                  <span className={cn("grid h-9 w-9 place-items-center rounded-full transition", i === a ? "bg-brand text-on-dark" : "text-on-dark/0")}>
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Why BSM: full-bleed image with glass panels ---------- */
+const reasons = [
+  { icon: Users, t: "Skilled Workforce", d: "Trained trades and site professionals ready to deploy." },
+  { icon: Award, t: "Quality Commitment", d: "Workmanship that meets handover standards." },
+  { icon: ShieldCheck, t: "Safety-Focused", d: "Safety supervision built into every site." },
+  { icon: Headset, t: "Reliable Support", d: "Responsive coordination from start to finish." },
+];
+export function WhyBSM() {
+  return (
+    <section className="relative overflow-hidden">
+      <img src={real.lifting} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+      <div className="absolute inset-0 bg-navy/80" />
+      <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-navy to-transparent" />
+      <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-36">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
+          <Reveal>
+            <p className="eyebrow text-brand-light">Why BSM</p>
+            <h2 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] text-on-dark sm:text-7xl">Built on people.<br /><span className="text-brand-light">Proven on site.</span></h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="max-w-md text-lg text-on-dark-muted lg:ml-auto">Businesses across Singapore rely on us for workforce and construction support that simply gets the job done.</p>
+          </Reveal>
+        </div>
+        <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {reasons.map(({ icon: Icon, t, d }, k) => (
+            <Reveal key={t} delay={k * 120}>
+              <div className="group relative h-full overflow-hidden rounded-tr-[2.5rem] border border-on-dark/15 bg-on-dark/5 p-8 backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:bg-brand">
+                <span className="absolute right-6 top-4 font-display text-6xl font-extrabold text-on-dark/10">{String(k + 1).padStart(2, "0")}</span>
+                <span className="grid h-14 w-14 place-items-center rounded-full bg-brand text-on-dark transition group-hover:bg-navy"><Icon className="h-6 w-6" /></span>
+                <h3 className="mt-8 font-display text-xl font-bold text-on-dark">{t}</h3>
+                <p className="mt-2 text-sm text-on-dark-muted group-hover:text-on-dark">{d}</p>
+                <span className="absolute bottom-0 left-0 h-1 w-full bg-brand-light" />
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Industries: expanding panels ---------- */
+export function Industries() {
+  const [a, setA] = useState(0);
+  return (
+    <section id="industries" className="bg-offwhite py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow">Industries</p>
+            <h2 className="mt-5 font-display text-5xl font-extrabold leading-none sm:text-6xl">Sectors we serve</h2>
+          </div>
+          <p className="max-w-sm text-muted-foreground">Trusted across five core sectors in Singapore.</p>
+        </Reveal>
+
+        <div className="flex flex-col gap-3 lg:h-[560px] lg:flex-row">
+          {industries.map((x, i) => {
+            const on = i === a;
+            return (
+              <button key={x.name} onMouseEnter={() => setA(i)} onClick={() => setA(i)}
+                className={cn("group relative h-56 overflow-hidden rounded-tr-[3rem] text-left transition-all duration-700 ease-out lg:h-auto",
+                  on ? "lg:flex-[4]" : "lg:flex-1")}>
+                <img src={x.image} alt={x.name} loading="lazy" className={cn("absolute inset-0 h-full w-full object-cover transition duration-700", on ? "scale-100" : "scale-110")} />
+                <div className={cn("absolute inset-0 transition duration-500", on ? "bg-overlay-tile" : "bg-navy/70")} />
+                <span className="absolute left-6 top-6 font-display text-sm font-bold text-brand-light">{String(i + 1).padStart(2, "0")}</span>
+                {/* collapsed vertical label */}
+                <span className={cn("absolute bottom-8 left-1/2 hidden origin-bottom-left -translate-x-1/2 whitespace-nowrap font-display text-lg font-bold text-on-dark transition lg:block lg:[writing-mode:vertical-rl] lg:rotate-180 lg:translate-x-[-50%]",
+                  on ? "opacity-0" : "opacity-100")}>{x.name}</span>
+                {/* expanded label */}
+                <div className={cn("absolute bottom-0 left-0 right-0 p-8 transition duration-500", on ? "translate-y-0 opacity-100" : "translate-y-4 opacity-100 lg:opacity-0")}>
+                  <h3 className="font-display text-2xl font-bold text-on-dark lg:text-4xl">{x.name}</h3>
+                  <span className="mt-4 hidden h-1 w-16 bg-brand lg:block" />
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
