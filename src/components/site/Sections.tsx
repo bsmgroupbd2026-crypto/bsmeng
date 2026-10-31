@@ -9,7 +9,7 @@ export function About() {
     <section id="about" className="relative overflow-hidden bg-background py-24 lg:py-36">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-12 lg:px-10">
         <Reveal className="relative lg:col-span-7">
-          <div className="aspect-[4/5] overflow-hidden sm:aspect-[5/4] lg:mr-16">
+          <div className="aspect-[4/5] overflow-hidden rounded-tr-[6rem] rounded-bl-[6rem] sm:aspect-[5/4] lg:mr-16">
             <img src={real.blueprint} alt="Engineers reviewing building plans on site" className="h-full w-full object-cover" loading="lazy" />
           </div>
           <div className="absolute -bottom-10 right-0 hidden w-[42%] border-8 border-background shadow-2xl sm:block">
@@ -63,10 +63,19 @@ export function Services() {
           </Reveal>
           <Reveal delay={100}><p className="max-w-md text-lg text-muted-foreground lg:ml-auto">Skilled, safety-trained personnel for construction and industrial sites.</p></Reveal>
         </div>
-        <div className="grid auto-rows-[220px] grid-cols-2 gap-3 md:auto-rows-[260px] md:grid-cols-4">
-          <Tile name={"Construction Workers"} image={real.manpower} index="01" className="col-span-2 row-span-2" />
-          {manpower.slice(1).map((m, k) => (
-            <Tile key={m.name} name={m.name} image={m.image} index={`0${k + 2}`} className={k === 0 ? "md:col-span-2" : ""} />
+        <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          {[{ name: "Construction Workers", image: real.manpower }, ...manpower.slice(1)].map((m, k) => (
+            <Reveal key={m.name} delay={(k % 3) * 100}>
+              <a href="#contact" className="group block">
+                <div className="aspect-[4/3] overflow-hidden rounded-tr-[4rem] rounded-bl-[4rem]">
+                  <img src={m.image} alt={m.name} loading="lazy" className="img-zoom h-full w-full object-cover group-hover:scale-105" />
+                </div>
+                <h3 className="mt-6 font-display text-2xl font-bold">{m.name}</h3>
+                <span className="mt-4 inline-flex items-center gap-2 border-b-2 border-brand pb-1 text-sm font-semibold text-navy">
+                  Request Workers <ArrowUpRight className="h-4 w-4 text-brand transition group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </span>
+              </a>
+            </Reveal>
           ))}
         </div>
       </div>
