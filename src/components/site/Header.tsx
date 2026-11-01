@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronDown, Menu, X, ArrowUpRight, MapPin, Clock, Mail, Phone, Settings } from "lucide-react";
+import { ChevronDown, Menu, X, MapPin, Clock, Mail, Phone, Settings } from "lucide-react";
 import logo from "@/assets/bsm-logo.jpeg.asset.json";
 const serviceMenu = [
   "Manpower Supply",
@@ -115,17 +115,5 @@ export function Header() {
         </div>
       )}
     </>
-  );
-}
-
-function MegaCol({ title, image, items }: { title: string; image: string; items: string[] }) {
-  return (
-    <div className="p-6">
-      <div className="mb-4 h-24 overflow-hidden"><img src={image} alt="" className="h-full w-full object-cover" loading="lazy" /></div>
-      <p className="mb-3 font-display text-xs font-bold uppercase tracking-[0.2em] text-brand">{title}</p>
-      <ul className="space-y-2">
-        {items.map((i) => <li key={i}><a href="/#services" className="text-sm text-foreground/80 hover:text-primary">{i}</a></li>)}
-      </ul>
-    </div>
   );
 }
