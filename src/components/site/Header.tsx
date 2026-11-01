@@ -91,7 +91,7 @@ export function Header() {
               <a key={l.label} href={l.href} className="py-4 font-display text-lg font-extrabold uppercase text-on-dark transition hover:text-navy">{l.label}</a>
             ))}
           </div>
-          <a href="#contact" className="rounded-md bg-navy px-9 py-4 font-display text-lg font-extrabold uppercase text-on-dark transition hover:bg-slate-deep">Get Quote</a>
+          <a href="#contact" className="rounded-md bg-navy px-11 py-4 font-display text-lg font-extrabold uppercase text-on-dark transition hover:bg-slate-deep">Get Quote</a>
         </nav>
       </div>
 
