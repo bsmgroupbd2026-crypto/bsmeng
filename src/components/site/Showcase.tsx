@@ -88,7 +88,7 @@ export function WhyBSM() {
       <img src={real.lifting} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
       <div className="absolute inset-0 bg-background/90" />
       <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-background to-transparent" />
-      <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-36">
+      <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
           <Reveal>
             <p className="eyebrow">Why BSM</p>
@@ -120,7 +120,7 @@ export function WhyBSM() {
 export function Industries() {
   const [a, setA] = useState(0);
   return (
-    <section id="industries" className="bg-offwhite py-24 lg:py-32">
+    <section id="industries" className="bg-offwhite py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div>
