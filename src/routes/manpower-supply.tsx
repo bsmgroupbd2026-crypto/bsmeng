@@ -5,7 +5,9 @@ import { Header, contact } from "@/components/site/Header";
 import { Credentials, Footer } from "@/components/site/Sections";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
-import { workforce, workforceCategories, workforceCover } from "@/components/site/workforce";
+import { workforceCover } from "@/components/site/workforce";
+import original from "@/components/site/manpower-original.json";
+import { ManpowerContent } from "@/components/site/ManpowerContent";
 
 export const Route = createFileRoute("/manpower-supply")({
   head: () => ({ meta: [
@@ -24,8 +26,7 @@ function enquiryLink(role: string) {
 }
 
 function ManpowerPage() {
-  const [category, setCategory] = useState<string>("All roles");
-  const roles = workforce.filter(role => category === "All roles" || role.category === category);
+  const roles = original.roles;
   return <>
     <Header />
     <main>
@@ -45,30 +46,17 @@ function ManpowerPage() {
 
       <section id="workforce" className="scroll-mt-24 bg-background py-12 lg:py-14">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal className="grid items-end gap-5 lg:grid-cols-[1.2fr_1fr]"><div><p className="eyebrow">Our manpower solutions</p><h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl">Trusted people.<br /><span className="text-brand">Reliable support.</span></h2></div><p className="max-w-md text-sm leading-7 text-muted-foreground lg:ml-auto">Construction, technical trades and site supervision. Find the workforce your next project needs.</p></Reveal>
-          <div className="mb-8 mt-7 flex flex-wrap gap-1 border-y border-border py-3" role="group" aria-label="Filter workforce">
-            {workforceCategories.map(item => <Button key={item} variant={category === item ? "default" : "ghost"} className="rounded-sm px-4" aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</Button>)}
-          </div>
+          <h2 className="mb-8 border-b-2 border-brand pb-5 text-center font-display text-2xl font-extrabold uppercase leading-tight sm:text-3xl">Trusted & Reliable Manpower Supply Solutions</h2>
           <div className="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-4" aria-live="polite">
             {roles.map((role, index) => <article key={role.name} className="group flex flex-col overflow-hidden rounded-md border border-border bg-card transition-colors hover:border-brand">
-              <a href={enquiryLink(role.name)} aria-label={`Enquire about ${role.name}`} className="relative block aspect-[4/5] overflow-hidden"><img src={role.image} alt={role.name} loading="lazy" className="img-zoom h-full w-full object-cover motion-safe:group-hover:scale-105" /><span className="absolute left-3 top-3 bg-background px-2 py-1 font-display text-xs font-bold text-navy">{String(index+1).padStart(2,"0")}</span><span className="absolute bottom-0 left-0 bg-brand px-3 py-2 text-xs font-semibold text-on-dark">{role.category}</span></a>
+              <a href={enquiryLink(role.name)} aria-label={`Enquire about ${role.name}`} className="relative block aspect-[4/3] overflow-hidden"><img src={role.image} alt={role.name} loading="lazy" className="img-zoom h-full w-full object-cover motion-safe:group-hover:scale-105" /><span className="absolute left-3 top-3 bg-background px-2 py-1 font-display text-xs font-bold text-navy">{String(index+1).padStart(2,"0")}</span></a>
               <div className="flex flex-1 flex-col p-4"><h3 className="font-display text-lg font-bold leading-6">{role.name}</h3><p className="mb-4 mt-3 text-sm leading-6 text-muted-foreground">{role.description}</p><Button asChild variant="link" className="mt-auto h-10 justify-between border-t border-border px-0"><a href={enquiryLink(role.name)}>Enquire about this role <ArrowUpRight /></a></Button></div>
             </article>)}
           </div>
         </div>
       </section>
 
-      <section className="bg-offwhite py-12 lg:py-16">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center lg:px-10">
-          <Reveal className="relative"><img src={workforceCover} alt="Workforce supporting a construction project" className="aspect-[5/4] w-full rounded-tr-[4rem] object-cover" loading="lazy" /><div className="absolute bottom-0 left-0 border-r-8 border-t-8 border-offwhite bg-brand px-6 py-5 font-display text-xl font-bold leading-tight text-on-dark">Your project.<br />Our workforce.</div></Reveal>
-          <div><Reveal><p className="eyebrow">From requirement to site</p><h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl">Let’s get your<br />team together.</h2></Reveal>
-          <div className="mt-7 space-y-5">{[
-            ["01", "Share your requirements", "Tell us the roles, number of workers, site location and project schedule."],
-            ["02", "Discuss the right fit", "We’ll discuss your scope, workforce requirements and availability."],
-            ["03", "Coordinate your workforce", "Agree the details and arrange the manpower support for your project."],
-          ].map(([number,title,text]) => <div key={number} className="flex gap-5 border-t border-border pt-5"><span className="font-display text-xl font-bold text-brand">{number}</span><div><h3 className="text-lg font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p></div></div>)}</div></div>
-        </div>
-      </section>
+      <ManpowerContent />
 
       <Credentials />
       <section className="bg-offwhite py-12 lg:py-16">
