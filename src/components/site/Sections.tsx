@@ -5,6 +5,9 @@ import certIso from "@/assets/cert-iso.png.asset.json";
 import certGebiz from "@/assets/cert-gebiz.png.asset.json";
 import certBca from "@/assets/cert-bca.png.asset.json";
 import certBizsafe from "@/assets/cert-bizsafe.png.asset.json";
+import { serviceLinks } from "./service-links";
+import { contact } from "./Header";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 export { Engineering, WhyBSM, Industries, Testimonials } from "./Showcase";
 import { real, img, manpower, engineering, industries, work } from "./data";
@@ -159,18 +162,18 @@ export function Contact() {
           <h2 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] text-navy sm:text-7xl">Let's Build Something Great Together.</h2>
         </Reveal>
         <Reveal delay={150}>
-          <form onSubmit={(e) => { e.preventDefault(); alert("Thank you — we'll be in touch shortly."); }} className="grid gap-6 bg-background p-8 shadow-2xl border border-border sm:grid-cols-2 lg:p-10">
-            <input required className={field} placeholder="Company Name" />
-            <input required className={field} placeholder="Contact Person" />
-            <input required type="email" className={field} placeholder="Email" />
-            <input className={field} placeholder="Phone" />
-            <select required defaultValue="" className={`${field} sm:col-span-2 [&>option]:text-navy`}>
+          <form onSubmit={(event) => { event.preventDefault(); const data = new FormData(event.currentTarget); const body = Array.from(data.entries()).map(([key,value]) => `${key}: ${value}`).join("\n"); window.location.href = `mailto:${contact.emails[0]}?subject=${encodeURIComponent("BSM Engineering enquiry")}&body=${encodeURIComponent(body)}`; }} className="grid gap-6 bg-background p-8 shadow-2xl border border-border sm:grid-cols-2 lg:p-10">
+            <input name="Company" aria-label="Company Name" required className={field} placeholder="Company Name" />
+            <input name="Name" aria-label="Contact Person" required className={field} placeholder="Contact Person" />
+            <input name="Email" aria-label="Email" required type="email" className={field} placeholder="Email" />
+            <input name="Phone" aria-label="Phone" className={field} placeholder="Phone" />
+            <select name="Service" aria-label="Service Required" required defaultValue="" className={`${field} sm:col-span-2 [&>option]:text-navy`}>
               <option value="" disabled>Service Required</option>
               <option>Manpower Solutions</option>
               {engineering.map((s) => <option key={s}>{s}</option>)}
             </select>
-            <textarea rows={3} className={`${field} sm:col-span-2 resize-none`} placeholder="Message" />
-            <button className="bg-primary py-4 font-semibold text-primary-foreground transition hover:bg-brand sm:col-span-2">Send Enquiry</button>
+            <textarea name="Message" aria-label="Message" rows={3} className={`${field} sm:col-span-2 resize-none`} placeholder="Message" />
+            <Button type="submit" className="h-12 sm:col-span-2">Send via Email <ArrowUpRight /></Button>
           </form>
         </Reveal>
       </div>
@@ -179,8 +182,8 @@ export function Contact() {
 }
 
 /* ---------- Footer ---------- */
-const footServices = ["Reinstatement", "Mezzanine Specialist", "Ceiling Work", "Awning Work", "Electrical Work", "Plumbing Work", "Drywall Partition", "Painting Work", "Bus Duct Work"];
-const footLinks = [["About Us", "#about"], ["Services", "#services"], ["Projects", "#projects"], ["Contact Us", "#contact"]];
+
+const footLinks = [{label:"About Us",to:"/about"},{label:"Services",to:"/services"},{label:"Gallery",to:"/gallery"},{label:"Testimonials",to:"/testimonials"},{label:"Contact Us",to:"/contact-us"}] as const;
 function FootTitle({ children }: { children: string }) {
   return (
     <div className="mb-8">
@@ -200,11 +203,11 @@ export function Footer() {
         </div>
         <div>
           <FootTitle>Popular Services</FootTitle>
-          <ul className="space-y-3">{footServices.map((s) => <li key={s}>{s === "Reinstatement" ? <Link to="/reinstatement-hacking-work" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-wide transition hover:translate-x-1 hover:text-brand-light"><span className="text-brand">—</span>{s}</Link> : <a href="/#services" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-wide transition hover:translate-x-1 hover:text-brand-light"><span className="text-brand">—</span>{s}</a>}</li>)}</ul>
+          <ul className="space-y-3">{serviceLinks.map(service => <li key={service.to}><Link to={service.to} className="flex items-center gap-3 text-sm font-semibold uppercase tracking-wide transition hover:translate-x-1 hover:text-brand-light"><span className="text-brand">—</span>{service.title}</Link></li>)}</ul>
         </div>
         <div>
           <FootTitle>Useful Link</FootTitle>
-          <ul className="space-y-4">{footLinks.map(([l, h]) => <li key={l}><a href={h} className="flex items-center gap-3 text-sm transition hover:translate-x-1 hover:text-brand-light"><span className="text-brand">—</span>{l}</a></li>)}</ul>
+          <ul className="space-y-4">{footLinks.map(link => <li key={link.to}><Link to={link.to} className="flex items-center gap-3 text-sm transition hover:translate-x-1 hover:text-brand-light"><span className="text-brand">—</span>{link.label}</Link></li>)}</ul>
         </div>
         <div>
           <FootTitle>Contact Info</FootTitle>

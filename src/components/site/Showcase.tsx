@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 import { ArrowUpRight, ShieldCheck, Users, Award, Headset, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
@@ -24,7 +26,9 @@ const eng = [
 /* ---------- Engineering & Construction: interactive showcase ---------- */
 export function Engineering() {
   const [a, setA] = useState(0);
-  const cur = eng[a] ?? eng[0]!;
+  const cur = eng[a] ?? eng[0];
+  if (!cur) return null;
+  const destinations = ["/reinstatement-hacking-work", "/electrical-work", "/ceiling-work", "/awning-work", "/plumbing-work", "/waterproofing-works", "/reinstatement-hacking-work", "/drywall-partition-work", "/bus-duct-work", "/services"] as const;
   return (
     <section className="relative overflow-hidden bg-offwhite py-16 lg:py-24">
       <div className="pointer-events-none absolute -right-40 top-0 h-[600px] w-[600px] rounded-full bg-brand/10 blur-3xl" />
@@ -49,6 +53,7 @@ export function Engineering() {
               <span className="font-display text-7xl font-extrabold leading-none text-on-dark/20 lg:text-9xl">{String(a + 1).padStart(2, "0")}</span>
               <h3 className="-mt-6 font-display text-3xl font-bold text-on-dark lg:text-4xl">{cur.name}</h3>
               <p className="mt-2 max-w-md text-on-dark-muted">{cur.text}</p>
+              <Button asChild className="mt-5"><Link to={destinations[a] ?? "/services"}>View Service <ArrowUpRight /></Link></Button>
             </div>
           </div>
 

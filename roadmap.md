@@ -1,9 +1,12 @@
 # Roadmap
+- [x] Build remaining original service pages and connect service navigation
+- [x] Build Gallery, Testimonials and Contact pages; gallery uses original service photos because archived gallery photos are unavailable
+- [x] Verify all new pages and email enquiry flows
 - [x] Reinstatement & Hacking page: retain original content, reference layout, contact form and service navigation
 - [x] BSM Engineering premium homepage (hero slider, about, services, why, industries, projects, credentials, contact, footer)
 - [x] About Us page (/about): banner, who we are, vision/mission/values, team photo strip, credentials, CTA
 - [x] Manpower Supply page (/manpower-supply): all 16 original roles, email enquiries, shared navigation
 - [x] Restore original Manpower page content and match the supplied contact/sidebar and outsourcing sections
 - [x] Awning Work page (/awning-work): original copy, real photos, scope, types, contact sidebar
-- [ ] Real address, phone, email, socials (waiting on user)
-- [ ] Verified certification logos + real project photos (waiting on user)
+- [ ] Confirm archived contact differences and social links (waiting on user; current published contact retained)
+- [ ] Original project-gallery photos and certification verification (waiting on user; archived gallery has no recoverable photo URLs)
