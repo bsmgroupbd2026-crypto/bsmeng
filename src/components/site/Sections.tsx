@@ -1,4 +1,5 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/bsm-logo.jpeg.asset.json";
 import certIso from "@/assets/cert-iso.png.asset.json";
 import certGebiz from "@/assets/cert-gebiz.png.asset.json";
@@ -71,7 +72,7 @@ export function Services() {
         <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {[{ name: "Construction Workers", image: real.manpower }, ...manpower.slice(1)].map((m, k) => (
             <Reveal key={m.name} delay={(k % 3) * 100}>
-              <a href="#contact" className="group block">
+              <Link to="/manpower-supply" className="group block">
                 <div className="aspect-[4/3] overflow-hidden rounded-tr-[4rem] rounded-bl-[4rem]">
                   <img src={m.image} alt={m.name} loading="lazy" className="img-zoom h-full w-full object-cover group-hover:scale-105" />
                 </div>
@@ -79,7 +80,7 @@ export function Services() {
                 <span className="mt-4 inline-flex items-center gap-2 border-b-2 border-brand pb-1 text-sm font-semibold text-navy">
                   Request Workers <ArrowUpRight className="h-4 w-4 text-brand transition group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </span>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>
