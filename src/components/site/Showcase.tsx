@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, ShieldCheck, Users, Award, Headset } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Users, Award, Headset, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
 import { img, real, industries } from "./data";

@@ -178,36 +178,52 @@ export function Contact() {
 }
 
 /* ---------- Footer ---------- */
+const footServices = ["Reinstatement", "Mezzanine Specialist", "Ceiling Work", "Awning Work", "Electrical Work", "Plumbing Work", "Drywall Partition", "Painting Work", "Bus Duct Work"];
+const footLinks = [["About Us", "#about"], ["Services", "#services"], ["Projects", "#projects"], ["Contact Us", "#contact"]];
+function FootTitle({ children }: { children: string }) {
+  return (
+    <div className="mb-8">
+      <h4 className="font-display text-lg font-extrabold uppercase tracking-[0.12em] text-on-dark">{children}</h4>
+      <div className="mt-4 flex items-center gap-1.5"><span className="h-1 w-24 bg-brand" /><span className="h-1 w-1.5 bg-brand" /><span className="h-1 w-1.5 bg-brand" /></div>
+    </div>
+  );
+}
 export function Footer() {
   return (
-    <footer className="bg-navy text-on-dark-muted">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:px-10">
-        <div>
-          <img src={logo.url} alt="BSM Engineering" className="h-16 w-auto rounded-sm" width={86} height={64} loading="lazy" />
-          <p className="mt-6 max-w-xs text-sm leading-relaxed">BSM Engineering & Construction Pte. Ltd. — engineering, construction and manpower solutions in Singapore.</p>
+    <footer className="bg-navy text-on-dark">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 lg:grid-cols-[1.4fr_1.1fr_0.8fr_1.2fr] lg:px-10">
+        <div className="text-center lg:text-left">
+          <img src={logo.url} alt="BSM Engineering" className="mx-auto h-28 w-auto lg:mx-0" loading="lazy" />
+          <a href="tel:+6569800553" className="mt-6 block font-display text-3xl font-extrabold hover:text-brand-light">(+65) 6980 0553</a>
+          <p className="mt-6 text-sm leading-7 text-on-dark-muted">BSM Engineering is a construction company specialized in providing dedicated reinstatement and repair works services. With the team’s expertise, we are able to work on-site during normal business hours as well as after-hours for those who need their premises restored quickly.</p>
         </div>
-        <FooterCol title="Services" items={["Manpower Solutions", "Reinstatement", "Ceiling Works", "Electrical", "Waterproofing"]} />
-        <FooterCol title="Company" items={["About", "Industries", "Projects", "Contact"]} />
         <div>
-          <h4 className="mb-5 font-display text-sm font-bold uppercase tracking-[0.2em] text-on-dark">Contact</h4>
-          <ul className="space-y-3 text-sm">
-            <li className="flex gap-3"><MapPin className="h-4 w-4 shrink-0 text-brand" /> 5 Soon Lee St, #04-49, Pioneer Point, Singapore 627607</li>
-            <li className="flex gap-3"><Phone className="h-4 w-4 shrink-0 text-brand" /> Mon – Sat : 8 AM – 5 PM</li>
-            <li className="flex gap-3"><Mail className="h-4 w-4 shrink-0 text-brand" /> enquiry@bsmengg.com</li>
-            <li><a href="tel:+6569800553" className="font-display text-lg font-bold text-on-dark hover:text-brand-light">(+65) 6980 0553</a></li>
+          <FootTitle>Popular Services</FootTitle>
+          <ul className="space-y-3">{footServices.map((s) => <li key={s}><a href="#services" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-wide transition hover:translate-x-1 hover:text-brand-light"><span className="text-brand">—</span>{s}</a></li>)}</ul>
+        </div>
+        <div>
+          <FootTitle>Useful Link</FootTitle>
+          <ul className="space-y-4">{footLinks.map(([l, h]) => <li key={l}><a href={h} className="flex items-center gap-3 text-sm transition hover:translate-x-1 hover:text-brand-light"><span className="text-brand">—</span>{l}</a></li>)}</ul>
+        </div>
+        <div>
+          <FootTitle>Contact Info</FootTitle>
+          <ul className="space-y-7">
+            <FootContact icon={Mail} t="Email" href="mailto:enquiry@bsmengg.com" lines={["enquiry@bsmengg.com"]} />
+            <FootContact icon={Phone} t="Contact Us" href="tel:+6569800553" lines={["+65 6980 0553"]} />
+            <FootContact icon={MapPin} t="Address" lines={["5 Soon Lee St, #04-49", "Pioneer Point, Singapore 627607"]} />
           </ul>
-          <div className="mt-6 flex gap-4 text-sm font-semibold text-on-dark"><a href="#">LinkedIn</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div>
         </div>
       </div>
-      <div className="border-t border-on-dark/10 py-6 text-center text-xs">© {new Date().getFullYear()} BSM Engineering & Construction Pte. Ltd.</div>
+      <div className="bg-brand py-5 text-center text-sm text-on-dark">Copyright © {new Date().getFullYear()} BSM Engineering & Construction Pte Ltd. All Rights Reserved.</div>
     </footer>
   );
 }
-function FooterCol({ title, items }: { title: string; items: string[] }) {
+function FootContact({ icon: Icon, t, lines, href }: { icon: typeof Mail; t: string; lines: string[]; href?: string }) {
+  const body = <><p className="font-display text-sm font-bold uppercase tracking-[0.15em]">{t}</p>{lines.map((l) => <p key={l} className="text-sm text-on-dark-muted">{l}</p>)}</>;
   return (
-    <div>
-      <h4 className="mb-5 font-display text-sm font-bold uppercase tracking-[0.2em] text-on-dark">{title}</h4>
-      <ul className="space-y-3 text-sm">{items.map((i) => <li key={i}><a href="#" className="hover:text-brand-light">{i}</a></li>)}</ul>
-    </div>
+    <li className="flex items-center gap-4">
+      <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-brand"><Icon className="h-6 w-6" /></span>
+      <div>{href ? <a href={href} className="hover:text-brand-light">{body}</a> : body}</div>
+    </li>
   );
 }
