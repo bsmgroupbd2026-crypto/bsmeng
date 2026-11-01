@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ManpowerSupplyRouteImport } from './routes/manpower-supply'
+import { Route as ReinstatementHackingWorkRouteImport } from './routes/reinstatement-hacking-work'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +29,50 @@ const ManpowerSupplyRoute = ManpowerSupplyRouteImport.update({
   path: '/manpower-supply',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReinstatementHackingWorkRoute =
+  ReinstatementHackingWorkRouteImport.update({
+    id: '/reinstatement-hacking-work',
+    path: '/reinstatement-hacking-work',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
+  '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
+  '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
+  '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/manpower-supply'
+  fullPaths: '/' | '/about' | '/manpower-supply' | '/reinstatement-hacking-work'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/manpower-supply'
-  id: '__root__' | '/' | '/about' | '/manpower-supply'
+  to: '/' | '/about' | '/manpower-supply' | '/reinstatement-hacking-work'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/manpower-supply'
+    | '/reinstatement-hacking-work'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ManpowerSupplyRoute: typeof ManpowerSupplyRoute
+  ReinstatementHackingWorkRoute: typeof ReinstatementHackingWorkRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +98,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManpowerSupplyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reinstatement-hacking-work': {
+      id: '/reinstatement-hacking-work'
+      path: '/reinstatement-hacking-work'
+      fullPath: '/reinstatement-hacking-work'
+      preLoaderRoute: typeof ReinstatementHackingWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +112,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ManpowerSupplyRoute: ManpowerSupplyRoute,
+  ReinstatementHackingWorkRoute: ReinstatementHackingWorkRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
