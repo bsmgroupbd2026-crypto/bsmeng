@@ -1,9 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Check, ChevronRight, Mail, Phone } from "lucide-react";
-import { Header, contact } from "@/components/site/Header";
-import { Footer } from "@/components/site/Sections";
-import { serviceLinks } from "@/components/site/service-links";
-import { ServiceContact } from "@/components/site/ServiceContact";
+import { ServicePageLayout } from "@/components/site/ServicePageLayout";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArrowUpRight, Check } from "lucide-react";
+import { contact } from "@/components/site/Header";
 import { Button } from "@/components/ui/button";
 import content from "@/components/site/awning-original.json";
 import cover from "@/assets/awning-cover.asset.json";
@@ -17,6 +15,8 @@ export const Route = createFileRoute("/awning-work")({
     { name: "description", content: "BSM Engineering is a trusted awning contractor in Singapore for canvas, glass and polycarbonate awnings — design, installation, repair and maintenance for commercial and residential properties." },
     { property: "og:title", content: "Awning Work | BSM Engineering Singapore" },
     { property: "og:description", content: "End-to-end awning services in Singapore: design, installation and maintenance of canvas, glass and polycarbonate awnings." },
+    { property: "og:image", content: cover.url },
+    { name: "twitter:image", content: cover.url },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),
@@ -40,23 +40,7 @@ function WorkList({ items }: { items: string[] }) {
 }
 
 function AwningPage() {
-  return <><Header /><main>
-    <section className="relative overflow-hidden bg-navy">
-      <img src={cover.url} alt="Awning installation work in Singapore" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-center" />
-      <div className="absolute inset-0 bg-overlay-hero" />
-      <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-16 lg:px-10">
-        <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap items-center gap-2 text-xs font-semibold text-on-dark"><Link to="/">Home</Link><ChevronRight className="h-3 w-3" /><span>Our Services</span><ChevronRight className="h-3 w-3" /><span>Awning Work</span></nav>
-        <div className="flex flex-wrap items-end justify-between gap-5"><div><h1 className="max-w-2xl text-3xl font-extrabold leading-tight text-on-dark sm:text-4xl">Awning Work<br />& Installation</h1><p className="mt-3 text-sm text-on-dark">Commercial · Residential · Industrial</p></div><Button asChild size="lg"><a href="#overview">Our scope of work <ArrowDown /></a></Button></div>
-      </div>
-    </section>
-
-    <div className="mx-auto grid max-w-7xl items-start gap-9 px-6 py-12 lg:grid-cols-[250px_minmax(0,1fr)] lg:px-10">
-      <aside className="order-2 min-w-0 lg:order-1">
-        <nav aria-label="Related services" className="mb-8 divide-y divide-border border-y border-border">{serviceLinks.map(service => <Link key={service.to} to={service.to} className="flex items-center justify-between gap-2 px-3 py-3 text-xs font-semibold uppercase hover:text-brand" activeProps={{ className: "bg-offwhite text-brand" }}>{service.title}<ChevronRight className="h-3 w-3 shrink-0" /></Link>)}</nav>
-        <div id="quick-contact" className="scroll-mt-24 border-l-2 border-brand bg-offwhite p-5"><ServiceContact service="Awning Work" /></div>
-      </aside>
-
-      <div className="order-1 min-w-0 lg:order-2">
+  return <ServicePageLayout title="Awning Work" image={cover.url} imageAlt="Awning installation work in Singapore">
         <section id="overview" className="scroll-mt-24">
           <p className="mb-3 text-xs font-bold uppercase text-brand">Awning Contractor Singapore</p>
           <h2 className="mb-5 max-w-2xl text-3xl font-extrabold leading-tight">Awning Contractor for Commercial and Residential Properties</h2>
@@ -84,8 +68,5 @@ function AwningPage() {
           </div>)}</div>
           <Button asChild className="mt-6"><a href="#quick-contact">Request a quote <ArrowUpRight /></a></Button>
         </section>
-      </div>
-    </div>
-    <section className="border-t border-border bg-offwhite py-10"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 lg:px-10"><div><p className="mb-2 text-xs font-bold uppercase text-brand">Talk to BSM</p><h2 className="text-2xl font-extrabold">Need an awning installed or repaired?</h2></div><div className="flex flex-wrap gap-3"><Button asChild size="lg"><a href={enquiry}><Mail /> Send Enquiry</a></Button><Button asChild variant="outline" size="lg"><a href={`tel:${contact.tel}`}><Phone />{contact.phone}</a></Button></div></div></section>
-  </main><Footer /></>;
+  </ServicePageLayout>;
 }
