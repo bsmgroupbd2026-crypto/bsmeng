@@ -1,34 +1,213 @@
 {
-  "roles": [],
-  "methods": [],
+  "roles": [
+    {
+      "name": "General Workers",
+      "description": "Looking to hire a General Worker? Our experienced general workers ensure efficiency and support for your projects. Contact us for reliable manpower services.",
+      "image": "/__l5e/assets-v1/e5393967-1844-452e-a84f-5485f6550de9/workforce-original-0.jpg"
+    },
+    {
+      "name": "Rigger & Signalman",
+      "description": "Hiring a good Rigger & Signalman means ensuring safe and compliant operations for maintaining smooth works with effective communication.",
+      "image": "/__l5e/assets-v1/96653c74-9319-4869-860e-a0304915009e/workforce-original-1.jpg"
+    },
+    {
+      "name": "Welder Man",
+      "description": "If you are looking to hire a Welder Man, we guarantee best workmanship with ensuring durability and safety for project completion.",
+      "image": "/__l5e/assets-v1/966a4b3c-a13c-4a4e-a18f-bf1974600a89/workforce-original-2.jpg"
+    },
+    {
+      "name": "Rebar and Formwork",
+      "description": "Looking to hire Rebar and Formwork specialists? Our experienced team, ensures accurate rebar installation , solid formwork solutions and safety for all kinds of construction projects.",
+      "image": "/__l5e/assets-v1/e52581ff-35be-4627-90b8-af0fe1bb7817/workforce-original-3.jpg"
+    },
+    {
+      "name": "Lifting Supervisor",
+      "description": "Hiring a good Lifting Supervisor means ensuring safe and smooth project execution with safe compliant lifting operations while prioritizing on-site safety.",
+      "image": "/__l5e/assets-v1/831e46cb-a343-47ce-982b-ec87dc9865ef/workforce-original-4.jpg"
+    },
+    {
+      "name": "Electrical Worker",
+      "description": "Looking to hire an Electrical Worker ? Our certified Electrical Workers provide efficient services and expert electrical services for all types of electrical projects.",
+      "image": "/__l5e/assets-v1/d6041c1c-3384-4762-a328-18cfbf64da06/workforce-original-5.jpg"
+    },
+    {
+      "name": "M&E Technician",
+      "description": "Seeking M&E Technician? We are giving you mechanical and electrical systems, assuring reliable installation and troubleshooting for your projects.",
+      "image": "/__l5e/assets-v1/e3a5cee7-920d-4198-a325-f24d55d94346/workforce-original-6.jpg"
+    },
+    {
+      "name": "Site Engineers",
+      "description": "Want to\u00a0 hire Site Engineers in Singapore? Our professional Site Engineers supply efficient project management, timely execution and smooth site operations.",
+      "image": "/__l5e/assets-v1/db9d4c21-1fce-4c49-999a-bc63d5bda43e/workforce-original-7.jpg"
+    },
+    {
+      "name": "Boom/Forklift Lift Operators",
+      "description": "Looking to hire Boom/Forklift operators ? We supply skilled Boom/Forklift operators, well-trained material handling with high safety standards for site operations.",
+      "image": "/__l5e/assets-v1/dc9287e2-b079-4b7c-bbea-1099130a6505/workforce-original-8.jpg"
+    },
+    {
+      "name": "Scissor Lift Operator",
+      "description": "Want to hire a Scissor Lift Operator. Our skilled Scissor Lift Operators conduct safe and efficient operation of lift equipment. Contact us for skilled Scissor Lift Operators.",
+      "image": "/__l5e/assets-v1/8ab67e7f-0a54-4600-a080-4ddc89cecf06/workforce-original-9.jpg"
+    },
+    {
+      "name": "Excavator Operator",
+      "description": "For all kind of excavation services our skilled Excavator Operators ensure efficient excavation work with safety standards for project requirements.",
+      "image": "/__l5e/assets-v1/1ff82d4d-a3b0-4352-bfc9-58c44d692387/workforce-original-10.jpg"
+    },
+    {
+      "name": "Safety Supervisor",
+      "description": "Hiring Safety Supervisor? We provides well-trained and certified Safety Supervisor. Ensuring safety regulations, managing site risks and building a safe working environment.",
+      "image": "/__l5e/assets-v1/10bacb95-54d1-4d34-a10b-193ded79743f/workforce-original-11.jpg"
+    },
+    {
+      "name": "Site supervisor",
+      "description": "Hire a professional Site Supervisor from our manpower company. Our experienced Site Supervisors monitor all activities at site. Contact us for affordable and professional supervision.",
+      "image": "/__l5e/assets-v1/ee2e0031-7b13-4b69-b98a-3bc4569db5e5/workforce-original-12.jpg"
+    },
+    {
+      "name": "Banks man",
+      "description": "Searching for Banksman? We are giving you expert Banksmen while minimizing risk with efficiency in managing traffic, machinery and vehicle movement.",
+      "image": "/__l5e/assets-v1/fa33c38f-4a78-49a6-9464-9d30354512cd/workforce-original-13.jpg"
+    },
+    {
+      "name": "Traffic Controller",
+      "description": "Hire Traffic Controllers from our manpower company. For managing on-site vehicles, temporary road closures with responsibility and safety.",
+      "image": "/__l5e/assets-v1/1aeb4268-704f-4ebe-bcb7-a51156e5def1/workforce-original-14.jpg"
+    },
+    {
+      "name": "Scaffolding Erector & Supervisor",
+      "description": "Looking for experienced Scaffolding Erectors & Supervisor? Our skilled Scaffolding Erectors ensure safety with efficient scaffolding installation for constructions, industrial projects.",
+      "image": "/__l5e/assets-v1/8508756b-ef07-4159-bf27-254675fae856/workforce-original-15.jpg"
+    }
+  ],
+  "intro": "BSM Engineering is a leading, trusted and reliable manpower supply service provider. As a well-established company, we are aware of our responsibility. We provide manpower solutions, specializing in construction manpower and contract management, permanent staffing and temporary staffing. We support businesses widely by supplying skilled and qualified individuals to fill up their industrial and personnel needs. With determination and trust, we provide high quality manpower solutions. We have a strong focus on delivering excellent service and customer satisfaction to help our clients achieve their project goals efficiently. So, contract with us for affordable and reliable Manpower Services in Singapore.",
+  "methods": [
+    {
+      "title": "Permanent staffing",
+      "blocks": [
+        {
+          "text": "We offer permanent staffing services to help you hire skilled candidates that match your operational needs. We are experts in,",
+          "lead": ""
+        },
+        {
+          "text": "Executive Search ( Top 5% ) : Ideal for executive and senior leadership. Focusing on specialized positions with proven industry experience.",
+          "lead": "Executive Search ( Top 5% )"
+        },
+        {
+          "text": "Executive Placement : Our wide talent database and industry network connect you with qualified professionals.",
+          "lead": "Executive Placement"
+        },
+        {
+          "text": "Bulk Recruitment Projects : Managing Hiring with a demanding timeline while maintaining efficiency and quality.",
+          "lead": "Bulk Recruitment Projects"
+        },
+        {
+          "text": "Our services focus on junior or mid-level positions. These services are valuable for new projects, startups, business growth, plant and geographic expansions. We deliver within the accurate timeframe.",
+          "lead": ""
+        }
+      ]
+    },
+    {
+      "title": "Temporary staffing",
+      "blocks": [
+        {
+          "text": "We offer temporary staffing services in Singapore. So that you can customize the workforce for short or long-term requirements. With a large-scale experience and network base, we offer you temporary manpower services. Temporary Staffing services,",
+          "lead": ""
+        },
+        {
+          "text": "Expert Talent Matching: We investigate your requirements for understanding its cultures and specifications. It\u2019s our duty that we give you the source of qualified candidates who align with your requirements.",
+          "lead": "Expert Talent Matching:"
+        },
+        {
+          "text": "Short-Term and Long-Term Solutions: Whether it's a long term project or short time to fill temporary gaps, we provide professionals to ensure efficient operations.",
+          "lead": "Short-Term and Long-Term Solutions:"
+        },
+        {
+          "text": "Support for Diverse Needs: Our contract staffing solutions help businesses with their requirements, including seasonal demand, affordable cost, while maintaining operational efficiency.",
+          "lead": "Support for Diverse Needs:"
+        }
+      ]
+    },
+    {
+      "title": "Construction Manpower Management",
+      "blocks": [
+        {
+          "text": "Our Company provides manpower solutions with skill. We specialise in workers needed for construction. As our business is our workforce, we carry out both trained and experienced picks on all civil construction.",
+          "lead": ""
+        },
+        {
+          "text": "Our Main Construction Roles: Expert Level",
+          "lead": ""
+        },
+        {
+          "text": "Engineering and Supervision: Site Engineers Site Supervisors",
+          "lead": "Engineering and Supervision:"
+        },
+        {
+          "text": "All kinds of Skilled Equipment Operators: Welder Electrical Worker Machine Operators ( excluding Boom Lift, Scissor Lift, Forklift )",
+          "lead": "All kinds of Skilled Equipment Operators:"
+        },
+        {
+          "text": "Safety and Support Roles: Riggers and Signalmen Lifting Supervisors Safety Supervisors Banksman Scaffolding Supervisors",
+          "lead": "Safety and Support Roles:"
+        },
+        {
+          "text": "Board-Based and Expert Craft Work: General Workers Carpenters",
+          "lead": "Board-Based and Expert Craft Work:"
+        },
+        {
+          "text": "We ensure from our manpower services a seamless project for your specific project needs on time, with safety and success.",
+          "lead": ""
+        }
+      ]
+    },
+    {
+      "title": "Recruitment solution",
+      "blocks": [
+        {
+          "text": "In the experience of past years, we have achieved roles from entry level to senior leadership. We built a strong reputation with the right talent for connecting businesses. The foundation built of our success is the trust and confidence of our clients and our commitment remains the same to nurturing partnerships.",
+          "lead": ""
+        },
+        {
+          "text": "Our Vision for Worker Recruitment Solution We have a vision to become a global leader as a Manpower supplier. Without limitation, globally supporting clients regardless of industry, size, or location. We are determined to provide solutions that meet organizations\u2019 requirements while empowering job seekers with secure and progressive careers.",
+          "lead": "Our Vision for Worker Recruitment Solution"
+        },
+        {
+          "text": "Commitment to Excellence Our journey took wings with a zeal for excellence from our humble beginnings to date. Our growth has been fuelled by the vision and dedication of our founder who ensures that every client, as well as candidate, gets the attention alongside service that they rightfully deserve. We are always prepared to provide solutions whether you represent an organization seeking out top talents, or a professional on the lookout for your next career step.",
+          "lead": "Commitment to Excellence"
+        }
+      ]
+    }
+  ],
   "industries": [
     {
-      "type": "paragraph",
-      "text": "Over the years, manpower outsourcing has been one of the trends that established itself in Singapore and will save you a lot of time and resources so your organization can focus on main activities without compromising, this is where manpower outsourcing comes to the rescue!"
+      "text": "Over the years, manpower outsourcing has been one of the trends that established itself in Singapore and will save you a lot of time and resources so your organization can focus on main activities without compromising, this is where manpower outsourcing comes to the rescue!",
+      "lead": "Singapore"
     },
     {
-      "type": "paragraph",
-      "text": "To make it up with its affordability while continuing to provide high-quality services by trusted providers. Our BSM experts are highly trained to complete your requirements for Site and EHS to work in accordance with your company goals quickly and effectively."
+      "text": "To make it up with its affordability while continuing to provide high-quality services by trusted providers. Our BSM experts are highly trained to complete your requirements for Site and EHS to work in accordance with your company goals quickly and effectively.",
+      "lead": "BSM experts"
     },
     {
-      "type": "paragraph",
-      "text": "BSM Engineering serves you with manpower supply services for every stage of your project lifecycle. We have the workforce to handle every aspect from planning and development all the way through execution and completion, allowing each stage of your project to require smooth, fluid operations for all kinds of projects."
+      "text": "BSM Engineering serves you with manpower supply services for every stage of your project lifecycle. We have the workforce to handle every aspect from planning and development all the way through execution and completion, allowing each stage of your project to require smooth, fluid operations for all kinds of projects.",
+      "lead": "BSM Engineering"
     },
     {
-      "type": "paragraph",
-      "text": "Hire Skilled Manpower for Your Short-Term/Long Term Projects Do you have a pressing requirement for greater volume to realize project deadlines? Short-term temporary work opportunity but no manpower? Is there a lull in between jobs while waiting for your next role?"
+      "text": "Hire Skilled Manpower for Your Short-Term/Long Term Projects Do you have a pressing requirement for greater volume to realize project deadlines? Short-term temporary work opportunity but no manpower? Is there a lull in between jobs while waiting for your next role?",
+      "lead": "Hire Skilled Manpower for Your Short-Term/Long Term Projects"
     },
     {
-      "type": "heading",
-      "text": "We\u2019ve got you covered!"
+      "text": "We\u2019ve got you covered!",
+      "lead": "We\u2019ve got you covered!"
     },
     {
-      "type": "paragraph",
-      "text": "We have a wide network of industry partners and bring you custom meet Manpower staffing solutions to keep your company and other workers productive. If you are looking to bridge the gap with outsourced manpower arrangements or even a seamless transition between projects, we set up the required manpower supply arrangements that work. BSM Engineering has been fantastic in providing skilled and reliable workers. Their efficiency and professionalism make them our go-to for manpower needs. Highly recommended!"
+      "text": "We have a wide network of industry partners and bring you custom meet Manpower staffing solutions to keep your company and other workers productive. If you are looking to bridge the gap with outsourced manpower arrangements or even a seamless transition between projects, we set up the required manpower supply arrangements that work. BSM Engineering has been fantastic in providing skilled and reliable workers. Their efficiency and professionalism make them our go-to for manpower needs. Highly recommended!",
+      "lead": "Manpower staffing solutions"
     },
     {
-      "type": "paragraph",
-      "text": "We provide skilled and semi-skilled workers for construction projects, drawing from a pool of experienced foreign and local talent, trained in various civil works to meet your project needs efficiently."
+      "text": "We provide skilled and semi-skilled workers for construction projects, drawing from a pool of experienced foreign and local talent, trained in various civil works to meet your project needs efficiently.",
+      "lead": ""
     }
   ]
 }
