@@ -46,13 +46,13 @@ function AboutPage() {
         <section className="relative overflow-hidden bg-navy">
           <img src={real.scaffold} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-navy/30" />
-          <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <div className="relative mx-auto max-w-7xl px-6 py-14 lg:px-10 lg:py-20">
             <p className="eyebrow text-brand-light">Who We Are</p>
-            <h1 className="mt-5 font-display text-5xl font-extrabold uppercase leading-none text-on-dark sm:text-7xl">About Us</h1>
-            <p className="mt-6 max-w-xl text-lg text-on-dark-muted">
+            <h1 className="mt-4 font-display text-4xl font-extrabold uppercase leading-none text-on-dark sm:text-5xl">About Us</h1>
+            <p className="mt-4 max-w-xl text-base text-on-dark-muted">
               A full-service company offering handyman solutions and repair services from start to finish.
             </p>
-            <nav className="mt-10 flex items-center gap-2 font-display text-sm font-bold uppercase tracking-widest text-on-dark-muted">
+            <nav className="mt-8 flex items-center gap-2 font-display text-xs font-bold uppercase tracking-widest text-on-dark-muted">
               <Link to="/" className="transition hover:text-brand-light">Home</Link>
               <ChevronRight className="h-4 w-4 text-brand-light" />
               <span className="text-brand-light">About Us</span>
