@@ -88,14 +88,14 @@ export function Services() {
 /* ---------- Projects ---------- */
 export function Projects() {
   return (
-    <section id="projects" className="bg-navy py-24 lg:py-32">
+    <section id="projects" className="bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mb-14 grid gap-6 lg:grid-cols-2 lg:items-end">
           <div>
-            <p className="eyebrow text-brand-light">Our Work</p>
-            <h2 className="mt-5 font-display text-5xl font-extrabold leading-none text-on-dark sm:text-6xl">On site,<br />every day.</h2>
+            <p className="eyebrow">Our Work</p>
+            <h2 className="mt-5 font-display text-5xl font-extrabold leading-none text-navy sm:text-6xl">On site,<br /><span className="text-brand">every day.</span></h2>
           </div>
-          <p className="max-w-sm text-on-dark-muted lg:ml-auto">A look at the kinds of work our teams deliver across Singapore.</p>
+          <p className="max-w-sm text-muted-foreground lg:ml-auto">A look at the kinds of work our teams deliver across Singapore.</p>
         </Reveal>
         <div className="grid gap-3 md:grid-cols-12">
           {work.map((w, k) => (

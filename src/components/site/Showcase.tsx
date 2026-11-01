@@ -165,19 +165,19 @@ const quotes = [
 ];
 export function Testimonials() {
   return (
-    <section className="bg-slate-deep py-24 lg:py-32">
+    <section className="bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal><p className="eyebrow text-brand-light">Testimonial</p>
-          <h2 className="mt-5 font-display text-5xl font-extrabold text-on-dark">What our clients say</h2></Reveal>
+        <Reveal><p className="eyebrow">Testimonial</p>
+          <h2 className="mt-5 font-display text-5xl font-extrabold text-navy">What our clients say</h2></Reveal>
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {quotes.map((x, k) => (
             <Reveal key={x.n} delay={k * 120}>
-              <figure className={cn("relative flex h-full flex-col rounded-tr-[3rem] border border-on-dark/10 p-10", k === 1 ? "bg-brand" : "bg-navy")}>
-                <span className="font-display text-8xl leading-none text-brand-light/40">“</span>
-                <blockquote className="-mt-6 flex-1 text-lg leading-relaxed text-on-dark">{x.q}</blockquote>
-                <figcaption className="mt-8 flex items-center gap-4 border-t border-on-dark/15 pt-6">
-                  <img src={x.i} alt={x.n} loading="lazy" className="h-12 w-12 rounded-full object-cover" />
-                  <span className="font-display font-bold text-on-dark">{x.n}</span>
+              <figure className={cn("relative flex h-full flex-col rounded-tr-[3rem] p-10", k === 1 ? "bg-navy shadow-2xl" : "border border-border bg-offwhite")}>
+                <span className={cn("font-display text-8xl leading-none", k === 1 ? "text-brand-light" : "text-brand/50")}>“</span>
+                <blockquote className={cn("-mt-6 flex-1 text-lg leading-relaxed", k === 1 ? "text-on-dark" : "text-foreground/80")}>{x.q}</blockquote>
+                <figcaption className={cn("mt-8 flex items-center gap-4 border-t pt-6", k === 1 ? "border-on-dark/15" : "border-border")}>
+                  <img src={x.i} alt={x.n} loading="lazy" className="h-12 w-12 rounded-full object-cover ring-2 ring-brand" />
+                  <span className={cn("font-display font-bold", k === 1 ? "text-on-dark" : "text-navy")}>{x.n}</span>
                 </figcaption>
               </figure>
             </Reveal>
