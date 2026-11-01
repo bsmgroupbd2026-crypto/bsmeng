@@ -17,3 +17,4 @@
 - Remaining service pages use structured original content and a shared service-page renderer with a typed navigation catalogue, retaining source sections and consistent enquiry behaviour across individual routes.
 - Engineering service detail pages share ServicePageLayout for the photo banner, right enquiry sidebar and related-service navigation; specialised content remains in its route to preserve original section structure.
 - ServiceParagraphs presents recognised inline scope lists without changing source strings, so original imported copy remains intact while becoming scannable.
+- Projects has its own file route and reuses original service photography and descriptions without fabricated project names or clients; Gallery remains the filterable photo collection.
