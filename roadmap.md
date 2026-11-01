@@ -1,4 +1,5 @@
 # Roadmap
+- [x] Redesign other service pages with a light photo-led layout while preserving all original content and email enquiries
 - [x] Build remaining original service pages and connect service navigation
 - [x] Build Gallery, Testimonials and Contact pages; gallery uses original service photos because archived gallery photos are unavailable
 - [x] Verify all new pages and email enquiry flows
