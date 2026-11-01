@@ -12,3 +12,4 @@
 - Service detail pages use individual TanStack file routes and the shared site header and footer, so navigation and branding remain consistent.
 - Manpower photography and role data live in the shared workforce module with CDN asset pointers, avoiding hotlinked legacy-site images on the service page.
 - Manpower enquiries open a prefilled email to the published contact address; do not show submission success without a connected delivery service.
+- Original manpower service copy is stored as structured content and rendered by a dedicated content component so redesigns retain full role descriptions and outsourcing sections.
