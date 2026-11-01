@@ -173,7 +173,7 @@ export function Testimonials() {
           {quotes.map((x, k) => (
             <Reveal key={x.n} delay={k * 120}>
               <figure className={cn("relative flex h-full flex-col rounded-tr-[3rem] p-10", k === 1 ? "bg-brand shadow-2xl" : "border border-border bg-offwhite")}>
-                <span className={cn("font-display text-8xl leading-none", k === 1 ? "text-brand-light" : "text-brand/50")}>“</span>
+                <span className={cn("font-display text-8xl leading-none", k === 1 ? "text-on-dark/60" : "text-brand/50")}>“</span>
                 <blockquote className={cn("-mt-6 flex-1 text-lg leading-relaxed", k === 1 ? "text-on-dark" : "text-foreground/80")}>{x.q}</blockquote>
                 <figcaption className={cn("mt-8 flex items-center gap-4 border-t pt-6", k === 1 ? "border-on-dark/15" : "border-border")}>
                   <img src={x.i} alt={x.n} loading="lazy" className="h-12 w-12 rounded-full object-cover ring-2 ring-brand" />
