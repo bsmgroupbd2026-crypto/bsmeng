@@ -1,5 +1,9 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/bsm-logo.jpeg.asset.json";
+import certIso from "@/assets/cert-iso.png.asset.json";
+import certGebiz from "@/assets/cert-gebiz.png.asset.json";
+import certBca from "@/assets/cert-bca.png.asset.json";
+import certBizsafe from "@/assets/cert-bizsafe.png.asset.json";
 import { Reveal } from "./Reveal";
 export { Engineering, WhyBSM, Industries, Testimonials } from "./Showcase";
 import { real, img, manpower, engineering, industries, work } from "./data";
