@@ -4,5 +4,6 @@
 - [x] About Us page (/about): banner, who we are, vision/mission/values, team photo strip, credentials, CTA
 - [x] Manpower Supply page (/manpower-supply): all 16 original roles, email enquiries, shared navigation
 - [x] Restore original Manpower page content and match the supplied contact/sidebar and outsourcing sections
+- [x] Awning Work page (/awning-work): original copy, real photos, scope, types, contact sidebar
 - [ ] Real address, phone, email, socials (waiting on user)
 - [ ] Verified certification logos + real project photos (waiting on user)
