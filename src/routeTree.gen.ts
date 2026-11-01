@@ -17,10 +17,13 @@ import { Route as CeilingWorkRouteImport } from './routes/ceiling-work'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as DrywallPartitionWorkRouteImport } from './routes/drywall-partition-work'
 import { Route as ElectricalWorkRouteImport } from './routes/electrical-work'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ManpowerSupplyRouteImport } from './routes/manpower-supply'
 import { Route as PaintingWorkRouteImport } from './routes/painting-work'
 import { Route as PlumbingWorkRouteImport } from './routes/plumbing-work'
 import { Route as ReinstatementHackingWorkRouteImport } from './routes/reinstatement-hacking-work'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as WaterproofingWorksRouteImport } from './routes/waterproofing-works'
 
 const IndexRoute = IndexRouteImport.update({
@@ -63,6 +66,11 @@ const ElectricalWorkRoute = ElectricalWorkRouteImport.update({
   path: '/electrical-work',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManpowerSupplyRoute = ManpowerSupplyRouteImport.update({
   id: '/manpower-supply',
   path: '/manpower-supply',
@@ -84,6 +92,16 @@ const ReinstatementHackingWorkRoute =
     path: '/reinstatement-hacking-work',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestimonialsRoute = TestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WaterproofingWorksRoute = WaterproofingWorksRouteImport.update({
   id: '/waterproofing-works',
   path: '/waterproofing-works',
@@ -99,10 +117,13 @@ export interface FileRoutesByFullPath {
   '/contact-us': typeof ContactUsRoute
   '/drywall-partition-work': typeof DrywallPartitionWorkRoute
   '/electrical-work': typeof ElectricalWorkRoute
+  '/gallery': typeof GalleryRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/painting-work': typeof PaintingWorkRoute
   '/plumbing-work': typeof PlumbingWorkRoute
   '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
+  '/services': typeof ServicesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/waterproofing-works': typeof WaterproofingWorksRoute
 }
 export interface FileRoutesByTo {
@@ -114,10 +135,13 @@ export interface FileRoutesByTo {
   '/contact-us': typeof ContactUsRoute
   '/drywall-partition-work': typeof DrywallPartitionWorkRoute
   '/electrical-work': typeof ElectricalWorkRoute
+  '/gallery': typeof GalleryRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/painting-work': typeof PaintingWorkRoute
   '/plumbing-work': typeof PlumbingWorkRoute
   '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
+  '/services': typeof ServicesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/waterproofing-works': typeof WaterproofingWorksRoute
 }
 export interface FileRoutesById {
@@ -130,10 +154,13 @@ export interface FileRoutesById {
   '/contact-us': typeof ContactUsRoute
   '/drywall-partition-work': typeof DrywallPartitionWorkRoute
   '/electrical-work': typeof ElectricalWorkRoute
+  '/gallery': typeof GalleryRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/painting-work': typeof PaintingWorkRoute
   '/plumbing-work': typeof PlumbingWorkRoute
   '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
+  '/services': typeof ServicesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/waterproofing-works': typeof WaterproofingWorksRoute
 }
 export interface FileRouteTypes {
@@ -147,10 +174,13 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/drywall-partition-work'
     | '/electrical-work'
+    | '/gallery'
     | '/manpower-supply'
     | '/painting-work'
     | '/plumbing-work'
     | '/reinstatement-hacking-work'
+    | '/services'
+    | '/testimonials'
     | '/waterproofing-works'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -162,10 +192,13 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/drywall-partition-work'
     | '/electrical-work'
+    | '/gallery'
     | '/manpower-supply'
     | '/painting-work'
     | '/plumbing-work'
     | '/reinstatement-hacking-work'
+    | '/services'
+    | '/testimonials'
     | '/waterproofing-works'
   id:
     | '__root__'
@@ -177,10 +210,13 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/drywall-partition-work'
     | '/electrical-work'
+    | '/gallery'
     | '/manpower-supply'
     | '/painting-work'
     | '/plumbing-work'
     | '/reinstatement-hacking-work'
+    | '/services'
+    | '/testimonials'
     | '/waterproofing-works'
   fileRoutesById: FileRoutesById
 }
@@ -193,10 +229,13 @@ export interface RootRouteChildren {
   ContactUsRoute: typeof ContactUsRoute
   DrywallPartitionWorkRoute: typeof DrywallPartitionWorkRoute
   ElectricalWorkRoute: typeof ElectricalWorkRoute
+  GalleryRoute: typeof GalleryRoute
   ManpowerSupplyRoute: typeof ManpowerSupplyRoute
   PaintingWorkRoute: typeof PaintingWorkRoute
   PlumbingWorkRoute: typeof PlumbingWorkRoute
   ReinstatementHackingWorkRoute: typeof ReinstatementHackingWorkRoute
+  ServicesRoute: typeof ServicesRoute
+  TestimonialsRoute: typeof TestimonialsRoute
   WaterproofingWorksRoute: typeof WaterproofingWorksRoute
 }
 
@@ -258,6 +297,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ElectricalWorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/manpower-supply': {
       id: '/manpower-supply'
       path: '/manpower-supply'
@@ -286,6 +332,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReinstatementHackingWorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/testimonials': {
+      id: '/testimonials'
+      path: '/testimonials'
+      fullPath: '/testimonials'
+      preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/waterproofing-works': {
       id: '/waterproofing-works'
       path: '/waterproofing-works'
@@ -305,10 +365,13 @@ const rootRouteChildren: RootRouteChildren = {
   ContactUsRoute: ContactUsRoute,
   DrywallPartitionWorkRoute: DrywallPartitionWorkRoute,
   ElectricalWorkRoute: ElectricalWorkRoute,
+  GalleryRoute: GalleryRoute,
   ManpowerSupplyRoute: ManpowerSupplyRoute,
   PaintingWorkRoute: PaintingWorkRoute,
   PlumbingWorkRoute: PlumbingWorkRoute,
   ReinstatementHackingWorkRoute: ReinstatementHackingWorkRoute,
+  ServicesRoute: ServicesRoute,
+  TestimonialsRoute: TestimonialsRoute,
   WaterproofingWorksRoute: WaterproofingWorksRoute,
 }
 export const routeTree = rootRouteImport
