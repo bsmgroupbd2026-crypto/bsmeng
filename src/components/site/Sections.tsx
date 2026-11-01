@@ -146,19 +146,19 @@ export function Credentials() {
 }
 
 /* ---------- Contact ---------- */
-const field = "w-full border-0 border-b border-on-dark/25 bg-transparent py-3 text-on-dark placeholder:text-on-dark-muted focus:border-brand-light focus:outline-none";
+const field = "w-full border-0 border-b border-border bg-transparent py-3 text-navy placeholder:text-muted-foreground focus:border-brand focus:outline-none";
 export function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden">
       <img src={img.hero1} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-      <div className="absolute inset-0 bg-overlay-hero" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
       <div className="relative mx-auto grid max-w-7xl gap-14 px-6 py-24 lg:grid-cols-2 lg:px-10 lg:py-32">
         <Reveal>
-          <p className="eyebrow text-brand-light">Start a Project</p>
-          <h2 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] text-on-dark sm:text-7xl">Let's Build Something Great Together.</h2>
+          <p className="eyebrow">Start a Project</p>
+          <h2 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] text-navy sm:text-7xl">Let's Build Something Great Together.</h2>
         </Reveal>
         <Reveal delay={150}>
-          <form onSubmit={(e) => { e.preventDefault(); alert("Thank you — we'll be in touch shortly."); }} className="grid gap-6 bg-navy/80 p-8 backdrop-blur-md sm:grid-cols-2 lg:p-10">
+          <form onSubmit={(e) => { e.preventDefault(); alert("Thank you — we'll be in touch shortly."); }} className="grid gap-6 bg-background p-8 shadow-2xl border border-border sm:grid-cols-2 lg:p-10">
             <input required className={field} placeholder="Company Name" />
             <input required className={field} placeholder="Contact Person" />
             <input required type="email" className={field} placeholder="Email" />
