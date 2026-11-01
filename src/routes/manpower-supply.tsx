@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, ChevronRight, Mail, Phone } from "lucide-react";
 import { Header, contact } from "@/components/site/Header";
 import { Credentials, Footer } from "@/components/site/Sections";
-import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { workforceCover } from "@/components/site/workforce";
 import original from "@/components/site/manpower-original.json";
