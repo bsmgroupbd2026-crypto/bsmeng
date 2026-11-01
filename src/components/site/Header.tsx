@@ -2,7 +2,17 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X, ArrowUpRight, MapPin, Clock, Mail, Phone, Settings } from "lucide-react";
 import logo from "@/assets/bsm-logo.jpeg.asset.json";
-import { real, img, engineering } from "./data";
+const serviceMenu = [
+  "Manpower Supply",
+  "Reinstatement & Hacking",
+  "Awning Work",
+  "Electrical Work",
+  "Waterproofing Works",
+  "Ceiling Work",
+  "Plumbing Work",
+  "Drywall Partition Work",
+  "Painting Work",
+];
 
 const links = [
   { href: "/#top", label: "Home" },
@@ -74,18 +84,16 @@ export function Header() {
                 <a href={l.href} className="flex items-center gap-1 font-display text-sm font-bold uppercase tracking-wide text-on-dark">
                   {l.label} <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" />
                 </a>
-                <div className="invisible absolute left-0 top-full w-[760px] pt-3 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
-                  <div className="grid grid-cols-[1fr_1fr_1.1fr] overflow-hidden rounded-md bg-background shadow-2xl">
-                    <MegaCol title="Manpower Solutions" image={real.manpower} items={["Construction Workers", "Riggers & Signalmen", "Welders", "M&E Technicians", "Site Supervisors", "Site Engineers"]} />
-                    <MegaCol title="Engineering & Construction" image={img.ceiling} items={engineering.slice(0, 6)} />
-                    <div className="relative">
-                      <img src={img.electrical} alt="" className="h-full w-full object-cover" loading="lazy" />
-                      <div className="absolute inset-0 bg-overlay-tile" />
-                      <a href="/#contact" className="absolute bottom-6 left-6 right-6 font-display text-lg font-bold text-on-dark">
-                        Plan your next project <ArrowUpRight className="inline h-5 w-5 text-brand-light" />
-                      </a>
-                    </div>
-                  </div>
+                <div className="invisible absolute left-0 top-full w-72 pt-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                  <ul className="overflow-hidden rounded-sm bg-background py-2 shadow-2xl">
+                    {serviceMenu.map((s) => (
+                      <li key={s}>
+                        <a href="/#services" className="block border-b border-border px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wide text-navy transition hover:bg-offwhite hover:pl-8 hover:text-brand">
+                          {s}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ) : l.href === "/about" ? (
