@@ -117,23 +117,22 @@ export function Projects() {
 /* ---------- Credentials ---------- */
 export function Credentials() {
   const certs = [
-    { k: "ISO", t: "ISO 9001:2015", d: "Quality management" },
-    { k: "bizSAFE", t: "bizSAFE Star", d: "Workplace safety" },
-    { k: "BCA", t: "BCA Registered", d: "CoreTrade tradesmen" },
-    { k: "GeBIZ", t: "GeBIZ Trading Partner", d: "Government procurement" },
+    { src: certIso.url, t: "ISO 9001:2015" },
+    { src: certGebiz.url, t: "GeBIZ" },
+    { src: certBca.url, t: "BCA" },
+    { src: certBizsafe.url, t: "bizSAFE Star" },
   ];
   return (
-    <section className="bg-offwhite py-20">
+    <section className="bg-background py-20 border-y border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div><p className="eyebrow">We are certified by</p><h2 className="mt-4 font-display text-4xl font-extrabold">Credentials you can trust</h2></div>
+        <div className="text-center">
+          <p className="eyebrow justify-center">We are certified by</p>
+          <h2 className="mt-4 font-display text-4xl font-extrabold">Credentials you can trust</h2>
         </div>
-        <div className="mt-10 grid grid-cols-2 border-l border-t border-border lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 items-center gap-10 lg:grid-cols-4">
           {certs.map((c) => (
-            <div key={c.t} className="group border-b border-r border-border bg-background p-8 transition hover:bg-navy">
-              <span className="font-display text-3xl font-extrabold text-brand group-hover:text-brand-light">{c.k}</span>
-              <p className="mt-6 font-display font-bold group-hover:text-on-dark">{c.t}</p>
-              <p className="text-sm text-muted-foreground group-hover:text-on-dark-muted">{c.d}</p>
+            <div key={c.t} className="flex h-32 items-center justify-center bg-background px-6 transition hover:-translate-y-1">
+              <img src={c.src} alt={`${c.t} certification logo`} className="max-h-24 w-auto object-contain" loading="lazy" />
             </div>
           ))}
         </div>
