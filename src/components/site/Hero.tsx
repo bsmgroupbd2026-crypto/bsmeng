@@ -38,18 +38,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom accent bar */}
-      <div className="absolute inset-x-0 bottom-0">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 pb-8 lg:px-10">
-          <p className="hidden font-display text-xs font-bold uppercase tracking-[0.3em] text-on-dark-muted sm:block">
-            Manpower · Reinstatement · M&E Works
-          </p>
-          <a href="#about" className="flex items-center gap-3 font-display text-xs font-bold uppercase tracking-[0.3em] text-on-dark-muted transition hover:text-on-dark">
-            Scroll
-            <span className="block h-8 w-px bg-on-dark/40" />
-          </a>
-        </div>
-      </div>
     </section>
   );
 }
