@@ -1,0 +1,94 @@
+{
+  "gallery": {
+    "categories": [
+      {
+        "title": "Reinstatement Work",
+        "images": []
+      },
+      {
+        "title": "Awning & Canopy Work",
+        "images": []
+      },
+      {
+        "title": "Electrical Installation Work",
+        "images": []
+      },
+      {
+        "title": "Renovation Work",
+        "images": []
+      },
+      {
+        "title": "Bus Duct Installation Work",
+        "images": []
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "MR WONG",
+      "quote": "We are very satisfied with their work. They completed the restoration work in time and we very much like their work quality.",
+      "image": "/__l5e/assets-v1/00a69467-7d1b-49b2-a4e1-093ebaf37d6b/testimonial-original-Client-3.jpg"
+    },
+    {
+      "name": "FAIZAL",
+      "quote": "We hired them to do our ceiling work and are quite happy to work with them. They are very professional and highly recommend them to others.",
+      "image": "/__l5e/assets-v1/7e34e198-020f-48fe-b4ae-3f82e9dcfe3a/testimonial-original-Client-2.png"
+    },
+    {
+      "name": "JACOB TAN",
+      "quote": "Great work! We hired them to do our glass roof work and they have done great work. They completed the work within the time limit.",
+      "image": "/__l5e/assets-v1/57a7d475-fa25-4682-b6f2-5954af49d3e0/testimonial-original-Client-1.jpg"
+    }
+  ],
+  "contact": {
+    "paragraphs": [
+      "If you have any enquiry regarding our service, kindly reach out to us by filling up the form below or call us to the given phone number."
+    ],
+    "details": [
+      "Address: 1 Soon Lee Street #06-30 Pioneer Center Singapore 627605",
+      "Phone: (+65) 6980 0553 / (+65) 9359 0914",
+      "Email: enquiry@bsmengg.com; bsmengineering1@gmail.com",
+      "Fax: (+65) 6980 0552"
+    ]
+  },
+  "services": {
+    "blocks": [
+      {
+        "title": "Construction Services",
+        "text": "Our Company provides all kinds of commercial property repairing works from start to finish in Singapore."
+      },
+      {
+        "title": "Reinstatement Work",
+        "text": "We provide Reinstatement and Renovation Services for Commercial Properties, Offices, and Shops in Singapore, ensuring seamless transitions and high-quality finishes tailored to your specific needs."
+      },
+      {
+        "title": "Awning Service",
+        "text": "We provide awning installation services at an affordable price. Our expert team ensures professional installation with high-quality materials, delivering durable and stylish solutions for your space."
+      },
+      {
+        "title": "Electrical Work",
+        "text": "We provide electrical services such as electrical wiring, installation of electrical components, troubleshooting & repair for commercial properties, offices, residences in Singapore."
+      },
+      {
+        "title": "Ceiling Work",
+        "text": "We provide Ceiling Works such as False Ceiling, Plaster Ceiling etc at a very affordable price for Commercial Property and offices in Singapore."
+      },
+      {
+        "title": "Plumbing",
+        "text": "We provide Plumbing services such as Plumbing Installation, water taps, mixer taps, piping, bottle traps, flexible hoses etc at an affordable price."
+      },
+      {
+        "title": "Drywall Partition",
+        "text": "We provide Drywall Partition Works including office partitions, drywall partition, glass partition, partition wall for Commercial & residential property in Singapore."
+      },
+      {
+        "title": "Painting Work",
+        "text": "We provide all types of Painting services for commercial properties, offices, residences in Singapore at a very attractive price."
+      },
+      {
+        "title": "Bus Duct Work",
+        "text": "We provide Aluminum Bus Duct Service including Installation of Vertical & Horizontal bus Ducts for Indoor & Outdoor usage at an affordable price with quality work."
+      }
+    ]
+  }
+}
