@@ -165,20 +165,23 @@ const quotes = [
 ];
 export function Testimonials() {
   return (
-    <section className="bg-background py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal><p className="eyebrow">Testimonial</p>
-          <h2 className="mt-5 font-display text-5xl font-extrabold text-navy">What our clients say</h2></Reveal>
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+    <section className="relative overflow-hidden bg-offwhite py-24 lg:py-32">
+      <div className="pointer-events-none absolute -left-40 top-10 h-[480px] w-[480px] rounded-full bg-brand/10 blur-3xl" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <Reveal className="text-center">
+          <p className="font-display text-sm font-bold uppercase tracking-[0.3em] text-brand">Testimonial</p>
+          <h2 className="mt-3 font-display text-4xl font-extrabold uppercase text-navy sm:text-5xl">What our clients say</h2>
+          <div className="mt-5 flex items-center justify-center gap-2"><span className="h-1 w-1.5 bg-brand" /><span className="h-1 w-24 bg-brand" /><span className="h-1 w-1.5 bg-brand" /></div>
+        </Reveal>
+        <div className="mt-16 grid gap-x-8 gap-y-20 lg:grid-cols-3">
           {quotes.map((x, k) => (
             <Reveal key={x.n} delay={k * 120}>
-              <figure className={cn("relative flex h-full flex-col rounded-tr-[3rem] p-10", k === 1 ? "bg-brand shadow-2xl" : "border border-border bg-offwhite")}>
-                <span className={cn("font-display text-8xl leading-none", k === 1 ? "text-on-dark/60" : "text-brand/50")}>“</span>
-                <blockquote className={cn("-mt-6 flex-1 text-lg leading-relaxed", k === 1 ? "text-on-dark" : "text-foreground/80")}>{x.q}</blockquote>
-                <figcaption className={cn("mt-8 flex items-center gap-4 border-t pt-6", k === 1 ? "border-on-dark/15" : "border-border")}>
-                  <img src={x.i} alt={x.n} loading="lazy" className="h-12 w-12 rounded-full object-cover ring-2 ring-brand" />
-                  <span className={cn("font-display font-bold", k === 1 ? "text-on-dark" : "text-navy")}>{x.n}</span>
-                </figcaption>
+              <figure className={cn("group relative flex h-full flex-col items-center bg-background px-8 pb-20 pt-10 text-center shadow-xl transition duration-500 hover:-translate-y-2 hover:border-brand", k === 1 ? "border-2 border-brand" : "border-2 border-border")}>
+                <span className="font-display text-7xl font-extrabold leading-[0.6] text-brand">”</span>
+                <div className="mt-6 flex gap-1 text-brand">{Array.from({ length: 5 }).map((_, s) => <Star key={s} className="h-4 w-4 fill-current" />)}</div>
+                <blockquote className="mt-6 flex-1 leading-loose text-foreground/80">{x.q}</blockquote>
+                <figcaption className="mt-6 font-display text-xl font-extrabold uppercase tracking-wider text-brand">{x.n}</figcaption>
+                <img src={x.i} alt={x.n} loading="lazy" className="absolute -bottom-12 left-1/2 h-24 w-24 -translate-x-1/2 rounded-full border-4 border-brand bg-background object-cover" />
               </figure>
             </Reveal>
           ))}
