@@ -16,6 +16,7 @@ export type ServiceCopy = {
 
 export function OriginalServicePage({ content }: { content: ServiceCopy }) {
   const cover = content.images[0];
+  const labels = [...new Set(content.blocks.filter(block => block.heading && !block.paragraphs?.length && !block.items?.length).map(block => block.heading))];
   return <><Header /><main><PageBanner title={content.title} image={cover?.url} service />
     <div className="mx-auto grid max-w-7xl items-start gap-9 px-6 py-10 lg:grid-cols-[250px_minmax(0,1fr)] lg:px-10">
       <aside className="order-2 min-w-0 lg:order-1">
@@ -24,7 +25,8 @@ export function OriginalServicePage({ content }: { content: ServiceCopy }) {
       </aside>
       <div className="order-1 min-w-0 lg:order-2">
         {cover && <figure className="mb-7 overflow-hidden rounded-md"><img src={cover.url} alt={cover.alt || content.title} className="aspect-[16/7] w-full object-cover" /></figure>}
-        <div className="divide-y divide-border">{content.blocks.map((block, index) => <section key={index} className="py-6 first:pt-0">
+        {labels.length > 0 && <div className="mb-7 flex flex-wrap gap-3 border-y border-border py-4">{labels.map(label => <span key={label} className="flex items-center gap-2 text-xs font-bold"><Check className="h-3 w-3 text-brand" />{label}</span>)}</div>}
+        <div className="divide-y divide-border">{content.blocks.filter(block => block.paragraphs?.length || block.items?.length).map((block, index) => <section key={index} className="py-6 first:pt-0">
           {block.heading && <h2 className="mb-5 max-w-3xl text-2xl font-extrabold leading-snug">{block.heading}</h2>}
           <div className="space-y-4 text-sm leading-7 text-muted-foreground">{block.paragraphs?.map((paragraph, i) => <p key={i}>{paragraph}</p>)}</div>
           {block.items && <ul className="mt-5 grid gap-x-6 gap-y-3 sm:grid-cols-2">{block.items.map((item, i) => <li key={i} className="flex gap-3 text-sm leading-6"><Check className="mt-1 h-4 w-4 shrink-0 text-brand" /><span>{item}</span></li>)}</ul>}

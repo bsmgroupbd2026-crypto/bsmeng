@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
 
-export function PageBanner({ title, image, service = false }: { title: string; image?: string; service?: boolean }) {
+export function PageBanner({ title, image, service = false }: { title: string; image?: string | undefined; service?: boolean }) {
   return <section className="relative overflow-hidden border-b border-border bg-offwhite">
     {image && <><img src={image} alt={title} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-background/85" /></>}
     <div className="relative mx-auto max-w-7xl px-6 pb-9 pt-16 lg:px-10">
