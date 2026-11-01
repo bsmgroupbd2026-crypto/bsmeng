@@ -88,6 +88,8 @@ export function Header() {
                   </div>
                 </div>
               </div>
+            ) : l.href === "/about" ? (
+              <Link key={l.label} to="/about" className="py-4 font-display text-sm font-bold uppercase tracking-wide text-on-dark transition hover:text-navy" activeProps={{ className: "text-navy" }}>{l.label}</Link>
             ) : (
               <a key={l.label} href={l.href} className="py-4 font-display text-sm font-bold uppercase tracking-wide text-on-dark transition hover:text-navy">{l.label}</a>
             ))}
