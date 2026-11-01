@@ -88,7 +88,7 @@ export function Header() {
                   <ul className="overflow-hidden rounded-sm bg-background py-2 shadow-2xl">
                     {serviceMenu.map((s) => (
                       <li key={s}>
-                        {s === "Manpower Supply" ? <Link to="/manpower-supply" className="block border-b border-border px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wide text-navy transition hover:bg-offwhite hover:pl-8 hover:text-brand">{s}</Link> :
+                        {s === "Reinstatement & Hacking" ? <Link to="/reinstatement-hacking-work" className="block border-b border-border px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wide text-navy transition hover:bg-offwhite hover:pl-8 hover:text-brand">{s}</Link> : s === "Manpower Supply" ? <Link to="/manpower-supply" className="block border-b border-border px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wide text-navy transition hover:bg-offwhite hover:pl-8 hover:text-brand">{s}</Link> :
                         <a href="/#services" className="block border-b border-border px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wide text-navy transition hover:bg-offwhite hover:pl-8 hover:text-brand">
                           {s}
                         </a>}
@@ -113,6 +113,7 @@ export function Header() {
             <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="block border-b border-on-dark/10 py-4 font-display text-xl font-semibold text-on-dark">{l.label}</a>
           ))}
           <Link to="/manpower-supply" onClick={() => setOpen(false)} className="block border-b border-on-dark/10 py-4 pl-4 font-display text-lg font-semibold text-brand-light">Manpower Supply</Link>
+          <Link to="/reinstatement-hacking-work" onClick={() => setOpen(false)} className="block border-b border-on-dark/10 py-4 pl-4 font-display text-lg font-semibold text-brand-light">Reinstatement & Hacking</Link>
           <a href="/#contact" onClick={() => setOpen(false)} className="mt-6 block bg-primary py-4 text-center font-semibold text-primary-foreground">Get Quote</a>
         </div>
       )}

@@ -200,7 +200,7 @@ export function Footer() {
         </div>
         <div>
           <FootTitle>Popular Services</FootTitle>
-          <ul className="space-y-3">{footServices.map((s) => <li key={s}><a href="#services" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-wide transition hover:translate-x-1 hover:text-brand-light"><span className="text-brand">—</span>{s}</a></li>)}</ul>
+          <ul className="space-y-3">{footServices.map((s) => <li key={s}>{s === "Reinstatement" ? <Link to="/reinstatement-hacking-work" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-wide transition hover:translate-x-1 hover:text-brand-light"><span className="text-brand">—</span>{s}</Link> : <a href="/#services" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-wide transition hover:translate-x-1 hover:text-brand-light"><span className="text-brand">—</span>{s}</a>}</li>)}</ul>
         </div>
         <div>
           <FootTitle>Useful Link</FootTitle>
