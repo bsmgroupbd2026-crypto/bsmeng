@@ -43,7 +43,7 @@ export function Header() {
           <Settings className="h-4 w-4" /> We Are Provider Of Industrial Solutions.
         </div>
         <div className="flex flex-1 items-center justify-end gap-12 pr-[max(1.5rem,calc((100vw-80rem)/2+2.5rem))]">
-          <a href="#contact" className="flex items-center gap-2 hover:text-brand-light"><Mail className="h-4 w-4" /> Send Enquiry</a>
+          <a href="/#contact" className="flex items-center gap-2 hover:text-brand-light"><Mail className="h-4 w-4" /> Send Enquiry</a>
           <a href={`tel:${contact.tel}`} className="flex items-center gap-2 hover:text-brand-light"><Phone className="h-4 w-4" /> Call Us Today! {contact.phone}</a>
         </div>
       </div>
@@ -51,7 +51,7 @@ export function Header() {
       {/* Logo + info row */}
       <div className="bg-background">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-6 pb-6 pt-6 lg:px-10">
-          <a href="#top" className="shrink-0">
+          <a href="/#top" className="shrink-0">
             <img src={logo.url} alt="BSM Engineering logo" className="h-16 w-auto rounded-md sm:h-24" width={130} height={96} />
           </a>
           <div className="hidden gap-10 lg:flex">
@@ -81,7 +81,7 @@ export function Header() {
                     <div className="relative">
                       <img src={img.electrical} alt="" className="h-full w-full object-cover" loading="lazy" />
                       <div className="absolute inset-0 bg-overlay-tile" />
-                      <a href="#contact" className="absolute bottom-6 left-6 right-6 font-display text-lg font-bold text-on-dark">
+                      <a href="/#contact" className="absolute bottom-6 left-6 right-6 font-display text-lg font-bold text-on-dark">
                         Plan your next project <ArrowUpRight className="inline h-5 w-5 text-brand-light" />
                       </a>
                     </div>
@@ -92,7 +92,7 @@ export function Header() {
               <a key={l.label} href={l.href} className="py-4 font-display text-sm font-bold uppercase tracking-wide text-on-dark transition hover:text-navy">{l.label}</a>
             ))}
           </div>
-          <a href="#contact" className="rounded-md bg-navy px-9 py-4 font-display text-sm font-bold uppercase tracking-wide text-on-dark transition hover:bg-slate-deep">Get Quote</a>
+          <a href="/#contact" className="rounded-md bg-navy px-9 py-4 font-display text-sm font-bold uppercase tracking-wide text-on-dark transition hover:bg-slate-deep">Get Quote</a>
         </nav>
       </div>
 
@@ -101,7 +101,7 @@ export function Header() {
           {links.map((l) => (
             <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="block border-b border-on-dark/10 py-4 font-display text-xl font-semibold text-on-dark">{l.label}</a>
           ))}
-          <a href="#contact" onClick={() => setOpen(false)} className="mt-6 block bg-primary py-4 text-center font-semibold text-primary-foreground">Get Quote</a>
+          <a href="/#contact" onClick={() => setOpen(false)} className="mt-6 block bg-primary py-4 text-center font-semibold text-primary-foreground">Get Quote</a>
         </div>
       )}
     </>
@@ -114,7 +114,7 @@ function MegaCol({ title, image, items }: { title: string; image: string; items:
       <div className="mb-4 h-24 overflow-hidden"><img src={image} alt="" className="h-full w-full object-cover" loading="lazy" /></div>
       <p className="mb-3 font-display text-xs font-bold uppercase tracking-[0.2em] text-brand">{title}</p>
       <ul className="space-y-2">
-        {items.map((i) => <li key={i}><a href="#services" className="text-sm text-foreground/80 hover:text-primary">{i}</a></li>)}
+        {items.map((i) => <li key={i}><a href="/#services" className="text-sm text-foreground/80 hover:text-primary">{i}</a></li>)}
       </ul>
     </div>
   );
