@@ -78,7 +78,7 @@ export function Header() {
               </div>
             ) : <Link key={l.label} to={l.to} className="py-4 font-display text-sm font-bold uppercase tracking-wide text-on-dark transition hover:text-navy" activeProps={{ className: "text-navy" }} activeOptions={{ exact: true }}>{l.label}</Link>)}
           </div>
-          <Button asChild className="h-auto bg-navy px-9 py-4 hover:bg-slate-deep"><Link to="/contact-us">Get Quote</Link></Button>
+          <Button asChild className="h-auto bg-navy px-9 py-4 hover:bg-slate-deep"><Link to="/get-a-quote">Get Quote</Link></Button>
         </nav>
       </div>
 
@@ -86,7 +86,7 @@ export function Header() {
         <div className="sticky top-0 z-50 bg-navy px-6 py-6 lg:hidden">
           {links.map(l => <Link key={l.label} to={l.to} onClick={() => setOpen(false)} className="block border-b border-on-dark/10 py-4 font-display text-xl font-semibold text-on-dark">{l.label}</Link>)}
           {serviceLinks.map(service => <Link key={service.to} to={service.to} onClick={() => setOpen(false)} className="block border-b border-on-dark/10 py-3 pl-4 font-display text-base font-semibold text-brand-light">{service.title}</Link>)}
-          <Button asChild className="mt-6 w-full"><Link to="/contact-us" onClick={() => setOpen(false)}>Get Quote</Link></Button>
+          <Button asChild className="mt-6 w-full"><Link to="/get-a-quote" onClick={() => setOpen(false)}>Get Quote</Link></Button>
         </div>
       )}
     </>
