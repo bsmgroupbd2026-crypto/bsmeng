@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Check, ChevronRight, Mail, Phone } from "lucide-react";
 import { Header, contact } from "@/components/site/Header";
 import { Footer } from "@/components/site/Sections";
+import { serviceLinks } from "@/components/site/service-links";
 import { ServiceContact } from "@/components/site/ServiceContact";
 import { Button } from "@/components/ui/button";
 import content from "@/components/site/reinstatement-original.json";
@@ -28,7 +29,7 @@ const properties = [
   { title: "Office & Shops", image: office.url },
   { title: "Private Property", image: privateProperty.url },
 ];
-const related = ["Awning Work", "Electrical Work", "Ceiling Work", "Plumbing", "Drywall Partition", "Bus Duct Installation", "Painting"];
+
 const enquiry = `mailto:${contact.emails[0]}?subject=${encodeURIComponent("Reinstatement & Hacking enquiry")}`;
 
 function Paragraphs({ paragraphs }: { paragraphs: string[] }) {
@@ -62,11 +63,7 @@ function ReinstatementPage() {
 
     <div className="mx-auto grid max-w-7xl items-start gap-9 px-6 py-12 lg:grid-cols-[250px_minmax(0,1fr)] lg:px-10">
       <aside className="order-2 min-w-0 lg:order-1">
-        <nav aria-label="Related services" className="mb-8 border-y border-border">
-          <Link to="/reinstatement-hacking-work" className="flex items-center justify-between border-b border-border bg-offwhite px-3 py-4 text-xs font-bold uppercase text-brand">Reinstatement & Hacking <ChevronRight className="h-4 w-4" /></Link>
-          {related.map(name => <a key={name} href="/#services" className="flex items-center justify-between border-b border-border px-3 py-3 text-xs font-semibold uppercase hover:text-brand">{name}<ChevronRight className="h-3 w-3" /></a>)}
-          <Link to="/manpower-supply" className="flex items-center justify-between px-3 py-3 text-xs font-semibold uppercase hover:text-brand">Manpower Supply<ChevronRight className="h-3 w-3" /></Link>
-        </nav>
+        <nav aria-label="Related services" className="mb-8 divide-y divide-border border-y border-border">{serviceLinks.map(service => <Link key={service.to} to={service.to} className="flex items-center justify-between gap-2 px-3 py-3 text-xs font-semibold uppercase hover:text-brand" activeProps={{ className: "bg-offwhite text-brand" }}>{service.title}<ChevronRight className="h-3 w-3 shrink-0" /></Link>)}</nav>
         <div id="quick-contact" className="scroll-mt-24 border-l-2 border-brand bg-offwhite p-5"><ServiceContact service="Reinstatement & Hacking" /></div>
       </aside>
 

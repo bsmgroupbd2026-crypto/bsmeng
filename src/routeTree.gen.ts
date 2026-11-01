@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AwningWorkRouteImport } from './routes/awning-work'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as ManpowerSupplyRouteImport } from './routes/manpower-supply'
 import { Route as ReinstatementHackingWorkRouteImport } from './routes/reinstatement-hacking-work'
 
@@ -30,6 +31,11 @@ const AwningWorkRoute = AwningWorkRouteImport.update({
   path: '/awning-work',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManpowerSupplyRoute = ManpowerSupplyRouteImport.update({
   id: '/manpower-supply',
   path: '/manpower-supply',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awning-work': typeof AwningWorkRoute
+  '/contact-us': typeof ContactUsRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
 }
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awning-work': typeof AwningWorkRoute
+  '/contact-us': typeof ContactUsRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
 }
@@ -61,6 +69,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/awning-work': typeof AwningWorkRoute
+  '/contact-us': typeof ContactUsRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
 }
@@ -70,6 +79,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/awning-work'
+    | '/contact-us'
     | '/manpower-supply'
     | '/reinstatement-hacking-work'
   fileRoutesByTo: FileRoutesByTo
@@ -77,6 +87,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/awning-work'
+    | '/contact-us'
     | '/manpower-supply'
     | '/reinstatement-hacking-work'
   id:
@@ -84,6 +95,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/awning-work'
+    | '/contact-us'
     | '/manpower-supply'
     | '/reinstatement-hacking-work'
   fileRoutesById: FileRoutesById
@@ -92,6 +104,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AwningWorkRoute: typeof AwningWorkRoute
+  ContactUsRoute: typeof ContactUsRoute
   ManpowerSupplyRoute: typeof ManpowerSupplyRoute
   ReinstatementHackingWorkRoute: typeof ReinstatementHackingWorkRoute
 }
@@ -119,6 +132,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AwningWorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/manpower-supply': {
       id: '/manpower-supply'
       path: '/manpower-supply'
@@ -140,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AwningWorkRoute: AwningWorkRoute,
+  ContactUsRoute: ContactUsRoute,
   ManpowerSupplyRoute: ManpowerSupplyRoute,
   ReinstatementHackingWorkRoute: ReinstatementHackingWorkRoute,
 }
