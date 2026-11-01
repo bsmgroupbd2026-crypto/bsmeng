@@ -5,7 +5,7 @@ import { contact } from "./Header";
 
 export function Hero() {
   return (
-    <section id="top" className="relative h-[100svh] max-h-[860px] min-h-[620px] overflow-hidden bg-navy">
+    <section id="top" className="relative min-h-[100svh] overflow-hidden bg-navy">
       <video
         className="absolute inset-0 h-full w-full object-cover"
         src={heroVideo.url}
@@ -17,7 +17,7 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-overlay-hero" />
 
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-10 lg:px-10">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-6 py-24 lg:px-10">
         <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-6 duration-1000">
           <p className="eyebrow mb-6 text-brand-light">Engineering & Construction</p>
           <h1 className="font-display text-4xl font-extrabold leading-[1.02] text-on-dark sm:text-5xl lg:text-7xl">
