@@ -11,7 +11,7 @@ import { real, img, manpower, engineering, industries, work } from "./data";
 /* ---------- About ---------- */
 export function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-background py-24 lg:py-36">
+    <section id="about" className="relative overflow-hidden bg-background py-16 lg:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-12 lg:px-10">
         <Reveal className="relative lg:col-span-7">
           <div className="aspect-[4/5] overflow-hidden rounded-tr-[6rem] rounded-bl-[6rem] sm:aspect-[5/4] lg:mr-16">
@@ -60,7 +60,7 @@ export function Services() {
   return (
     <section id="services" className="bg-offwhite">
       {/* Manpower */}
-      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <div className="mb-14 grid items-end gap-8 lg:grid-cols-2">
           <Reveal>
             <p className="eyebrow">01 — Services</p>
@@ -92,7 +92,7 @@ export function Services() {
 /* ---------- Projects ---------- */
 export function Projects() {
   return (
-    <section id="projects" className="bg-background py-24 lg:py-32">
+    <section id="projects" className="bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mb-14 grid gap-6 lg:grid-cols-2 lg:items-end">
           <div>
@@ -127,7 +127,7 @@ export function Credentials() {
     { src: certBizsafe.url, t: "bizSAFE Star" },
   ];
   return (
-    <section className="bg-background py-20 border-y border-border">
+    <section className="bg-background py-14 border-y border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="text-center">
           <p className="eyebrow justify-center">We are certified by</p>
@@ -152,7 +152,7 @@ export function Contact() {
     <section id="contact" className="relative overflow-hidden">
       <img src={img.hero1} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
-      <div className="relative mx-auto grid max-w-7xl gap-14 px-6 py-24 lg:grid-cols-2 lg:px-10 lg:py-32">
+      <div className="relative mx-auto grid max-w-7xl gap-14 px-6 py-16 lg:grid-cols-2 lg:px-10 lg:py-24">
         <Reveal>
           <p className="eyebrow">Start a Project</p>
           <h2 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] text-navy sm:text-7xl">Let's Build Something Great Together.</h2>
