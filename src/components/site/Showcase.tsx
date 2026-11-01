@@ -26,7 +26,7 @@ export function Engineering() {
   const [a, setA] = useState(0);
   const cur = eng[a] ?? eng[0]!;
   return (
-    <section className="relative overflow-hidden bg-offwhite py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-offwhite py-16 lg:py-24">
       <div className="pointer-events-none absolute -right-40 top-0 h-[600px] w-[600px] rounded-full bg-brand/10 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mb-14 grid gap-6 lg:grid-cols-2 lg:items-end">
@@ -165,7 +165,7 @@ const quotes = [
 ];
 export function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-offwhite py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-offwhite py-16 lg:py-24">
       <div className="pointer-events-none absolute -left-40 top-10 h-[480px] w-[480px] rounded-full bg-brand/10 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="text-center">
