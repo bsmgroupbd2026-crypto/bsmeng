@@ -14,8 +14,6 @@ export const Route = createFileRoute("/manpower-supply")({
     { property: "og:title", content: "Manpower Supply | BSM Engineering Singapore" },
     { property: "og:description", content: "Find the right construction workers, technical personnel and site supervision for your project." },
     { property: "og:type", content: "website" },
-    { property: "og:image", content: workforceCover },
-    { name: "twitter:image", content: workforceCover },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),
   component: ManpowerPage,
