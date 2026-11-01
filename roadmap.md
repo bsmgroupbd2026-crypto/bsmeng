@@ -1,4 +1,7 @@
 # Roadmap
+- [ ] Build remaining original service pages and connect service navigation
+- [ ] Build remaining original Gallery, Testimonials and Contact pages
+- [ ] Verify all new pages and email enquiry flows
 - [x] Reinstatement & Hacking page: retain original content, reference layout, contact form and service navigation
 - [x] BSM Engineering premium homepage (hero slider, about, services, why, industries, projects, credentials, contact, footer)
 - [x] About Us page (/about): banner, who we are, vision/mission/values, team photo strip, credentials, CTA

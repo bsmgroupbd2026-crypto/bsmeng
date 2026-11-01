@@ -14,3 +14,4 @@
 - Manpower enquiries open a prefilled email to the published contact address; do not show submission success without a connected delivery service.
 - Original manpower service copy is stored as structured content and rendered by a dedicated content component so redesigns retain full role descriptions and outsourcing sections.
 - Reinstatement service copy is preserved in structured content, with CDN-backed original photography and a reusable email enquiry sidebar, so presentation changes do not omit source sections.
+- Remaining service pages use structured original content and a shared service-page renderer with a typed navigation catalogue, retaining source sections and consistent enquiry behaviour across individual routes.
