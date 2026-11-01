@@ -72,6 +72,7 @@
 
   --overlay-hero: linear-gradient(90deg, oklch(0.16 0.045 263 / 0.5) 0%, oklch(0.16 0.045 263 / 0.22) 55%, oklch(0.16 0.045 263 / 0.05) 100%);
   --overlay-tile: linear-gradient(180deg, transparent 35%, oklch(0.16 0.045 263 / 0.9) 100%);
+  --overlay-service: linear-gradient(90deg, var(--background) 0%, color-mix(in oklab, var(--background) 96%, transparent) 24%, color-mix(in oklab, var(--background) 82%, transparent) 48%, color-mix(in oklab, var(--background) 15%, transparent) 76%, transparent 100%);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -129,3 +130,21 @@
 }
 @utility animate-kenburns { animation: kenburns 7s ease-out forwards; }
 @utility animate-progress { transform-origin: left; animation: progress 6500ms linear forwards; }
+
+.service-cover-overlay { background-image: var(--overlay-service); }
+.service-page h1, .service-page h2, .service-page h3, .service-page h4 { letter-spacing: 0; }
+.service-content > section { margin-bottom: 0; }
+.service-content > section + section { border-top: 1px solid var(--border); }
+.service-content h2 { color: var(--foreground); }
+.service-content p { overflow-wrap: anywhere; }
+.service-content .service-lead { color: var(--foreground); font-size: 1rem; line-height: 1.8; }
+.service-enquiry h2 { border-bottom: 1px solid var(--border); text-transform: none; font-size: 1.25rem; }
+.service-enquiry h3 { border-bottom: 1px solid var(--border); text-transform: none; font-size: 1rem; }
+.service-enquiry form { gap: 0.85rem; }
+.service-enquiry form button { width: 100%; }
+@media (max-width: 639px) {
+  .service-cover-overlay { background: color-mix(in oklab, var(--background) 90%, transparent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-page { scroll-behavior: auto; }
+}
