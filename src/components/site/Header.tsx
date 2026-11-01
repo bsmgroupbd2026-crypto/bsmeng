@@ -1,15 +1,16 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X, ArrowUpRight, MapPin, Clock, Mail, Phone, Settings } from "lucide-react";
 import logo from "@/assets/bsm-logo.jpeg.asset.json";
 import { real, img, engineering } from "./data";
 
 const links = [
-  { href: "#top", label: "Home" },
-  { href: "#about", label: "About Us" },
-  { href: "#services", label: "Our Services", mega: true },
-  { href: "#industries", label: "Industries" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#top", label: "Home" },
+  { href: "/about", label: "About Us" },
+  { href: "/#services", label: "Our Services", mega: true },
+  { href: "/#industries", label: "Industries" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export const contact = {
