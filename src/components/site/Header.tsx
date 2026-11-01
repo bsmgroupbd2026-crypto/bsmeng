@@ -49,7 +49,7 @@ export function Header() {
 
       {/* Logo + info row */}
       <div className="bg-background">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-6 pb-16 pt-6 lg:px-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-6 pb-6 pt-6 lg:px-10">
           <a href="#top" className="shrink-0">
             <img src={logo.url} alt="BSM Engineering logo" className="h-16 w-auto rounded-md sm:h-24" width={130} height={96} />
           </a>
