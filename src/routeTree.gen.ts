@@ -21,6 +21,7 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ManpowerSupplyRouteImport } from './routes/manpower-supply'
 import { Route as PaintingWorkRouteImport } from './routes/painting-work'
 import { Route as PlumbingWorkRouteImport } from './routes/plumbing-work'
+import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ReinstatementHackingWorkRouteImport } from './routes/reinstatement-hacking-work'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
@@ -86,6 +87,11 @@ const PlumbingWorkRoute = PlumbingWorkRouteImport.update({
   path: '/plumbing-work',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReinstatementHackingWorkRoute =
   ReinstatementHackingWorkRouteImport.update({
     id: '/reinstatement-hacking-work',
@@ -121,6 +127,7 @@ export interface FileRoutesByFullPath {
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/painting-work': typeof PaintingWorkRoute
   '/plumbing-work': typeof PlumbingWorkRoute
+  '/projects': typeof ProjectsRoute
   '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
   '/services': typeof ServicesRoute
   '/testimonials': typeof TestimonialsRoute
@@ -139,6 +146,7 @@ export interface FileRoutesByTo {
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/painting-work': typeof PaintingWorkRoute
   '/plumbing-work': typeof PlumbingWorkRoute
+  '/projects': typeof ProjectsRoute
   '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
   '/services': typeof ServicesRoute
   '/testimonials': typeof TestimonialsRoute
@@ -158,6 +166,7 @@ export interface FileRoutesById {
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/painting-work': typeof PaintingWorkRoute
   '/plumbing-work': typeof PlumbingWorkRoute
+  '/projects': typeof ProjectsRoute
   '/reinstatement-hacking-work': typeof ReinstatementHackingWorkRoute
   '/services': typeof ServicesRoute
   '/testimonials': typeof TestimonialsRoute
@@ -178,6 +187,7 @@ export interface FileRouteTypes {
     | '/manpower-supply'
     | '/painting-work'
     | '/plumbing-work'
+    | '/projects'
     | '/reinstatement-hacking-work'
     | '/services'
     | '/testimonials'
@@ -196,6 +206,7 @@ export interface FileRouteTypes {
     | '/manpower-supply'
     | '/painting-work'
     | '/plumbing-work'
+    | '/projects'
     | '/reinstatement-hacking-work'
     | '/services'
     | '/testimonials'
@@ -214,6 +225,7 @@ export interface FileRouteTypes {
     | '/manpower-supply'
     | '/painting-work'
     | '/plumbing-work'
+    | '/projects'
     | '/reinstatement-hacking-work'
     | '/services'
     | '/testimonials'
@@ -233,6 +245,7 @@ export interface RootRouteChildren {
   ManpowerSupplyRoute: typeof ManpowerSupplyRoute
   PaintingWorkRoute: typeof PaintingWorkRoute
   PlumbingWorkRoute: typeof PlumbingWorkRoute
+  ProjectsRoute: typeof ProjectsRoute
   ReinstatementHackingWorkRoute: typeof ReinstatementHackingWorkRoute
   ServicesRoute: typeof ServicesRoute
   TestimonialsRoute: typeof TestimonialsRoute
@@ -325,6 +338,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlumbingWorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reinstatement-hacking-work': {
       id: '/reinstatement-hacking-work'
       path: '/reinstatement-hacking-work'
@@ -369,6 +389,7 @@ const rootRouteChildren: RootRouteChildren = {
   ManpowerSupplyRoute: ManpowerSupplyRoute,
   PaintingWorkRoute: PaintingWorkRoute,
   PlumbingWorkRoute: PlumbingWorkRoute,
+  ProjectsRoute: ProjectsRoute,
   ReinstatementHackingWorkRoute: ReinstatementHackingWorkRoute,
   ServicesRoute: ServicesRoute,
   TestimonialsRoute: TestimonialsRoute,
