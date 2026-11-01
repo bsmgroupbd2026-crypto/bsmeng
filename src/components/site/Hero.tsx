@@ -20,7 +20,7 @@ export function Hero() {
       <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-10 lg:px-10">
         <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-6 duration-1000">
           <p className="eyebrow mb-6 text-brand-light">Engineering & Construction</p>
-          <h1 className="font-display text-5xl font-extrabold leading-[1.02] text-on-dark sm:text-6xl lg:text-[5.5rem]">
+          <h1 className="font-display text-4xl font-extrabold leading-[1.02] text-on-dark sm:text-5xl lg:text-7xl">
             Engineering Excellence.<br />
             <span className="text-brand-light">Built for Singapore.</span>
           </h1>
