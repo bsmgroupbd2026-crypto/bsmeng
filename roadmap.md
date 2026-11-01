@@ -1,4 +1,5 @@
 # Roadmap
+- [ ] Reinstatement & Hacking page: retain original content, reference layout, contact form and service navigation
 - [x] BSM Engineering premium homepage (hero slider, about, services, why, industries, projects, credentials, contact, footer)
 - [x] About Us page (/about): banner, who we are, vision/mission/values, team photo strip, credentials, CTA
 - [x] Manpower Supply page (/manpower-supply): all 16 original roles, email enquiries, shared navigation
