@@ -26,15 +26,15 @@ export function Engineering() {
   const [a, setA] = useState(0);
   const cur = eng[a] ?? eng[0]!;
   return (
-    <section className="relative overflow-hidden bg-navy py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-offwhite py-24 lg:py-32">
       <div className="pointer-events-none absolute -right-40 top-0 h-[600px] w-[600px] rounded-full bg-brand/10 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mb-14 grid gap-6 lg:grid-cols-2 lg:items-end">
           <div>
-            <p className="eyebrow text-brand-light">02 — Services</p>
-            <h2 className="mt-5 font-display text-5xl font-extrabold leading-none text-on-dark sm:text-6xl">Engineering<br />& Construction</h2>
+            <p className="eyebrow">02 — Services</p>
+            <h2 className="mt-5 font-display text-5xl font-extrabold leading-none text-navy sm:text-6xl">Engineering<br />& Construction</h2>
           </div>
-          <p className="max-w-sm text-on-dark-muted lg:ml-auto">An in-house team of BCA CoreTrade masons, electricians, plumbers, partition and false ceiling specialists — for commercial, office, HDB and residential sites.</p>
+          <p className="max-w-sm text-muted-foreground lg:ml-auto">An in-house team of BCA CoreTrade masons, electricians, plumbers, partition and false ceiling specialists — for commercial, office, HDB and residential sites.</p>
         </Reveal>
 
         <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr]">
@@ -57,12 +57,12 @@ export function Engineering() {
             {eng.map((e, i) => (
               <li key={e.name}>
                 <button onMouseEnter={() => setA(i)} onFocus={() => setA(i)} onClick={() => setA(i)}
-                  className={cn("group flex w-full items-center justify-between border-b border-on-dark/10 py-4 text-left transition-all", i === a && "border-brand pl-4")}>
+                  className={cn("group flex w-full items-center justify-between border-b border-border py-4 text-left transition-all", i === a && "border-brand pl-4")}>
                   <span className="flex items-baseline gap-5">
-                    <span className={cn("font-display text-xs font-bold", i === a ? "text-brand-light" : "text-on-dark/40")}>{String(i + 1).padStart(2, "0")}</span>
-                    <span className={cn("font-display text-xl font-semibold transition sm:text-2xl", i === a ? "text-on-dark" : "text-on-dark/55")}>{e.name}</span>
+                    <span className={cn("font-display text-xs font-bold", i === a ? "text-brand" : "text-muted-foreground")}>{String(i + 1).padStart(2, "0")}</span>
+                    <span className={cn("font-display text-xl font-semibold transition sm:text-2xl", i === a ? "text-navy" : "text-navy/55")}>{e.name}</span>
                   </span>
-                  <span className={cn("grid h-9 w-9 place-items-center rounded-full transition", i === a ? "bg-brand text-on-dark" : "text-on-dark/0")}>
+                  <span className={cn("grid h-9 w-9 place-items-center rounded-full transition", i === a ? "bg-brand text-on-dark" : "text-transparent")}>
                     <ArrowUpRight className="h-4 w-4" />
                   </span>
                 </button>
@@ -86,26 +86,26 @@ export function WhyBSM() {
   return (
     <section className="relative overflow-hidden">
       <img src={real.lifting} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-      <div className="absolute inset-0 bg-navy/80" />
-      <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-navy to-transparent" />
+      <div className="absolute inset-0 bg-background/90" />
+      <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-background to-transparent" />
       <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-36">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
           <Reveal>
-            <p className="eyebrow text-brand-light">Why BSM</p>
-            <h2 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] text-on-dark sm:text-7xl">Built on people.<br /><span className="text-brand-light">Proven on site.</span></h2>
+            <p className="eyebrow">Why BSM</p>
+            <h2 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] text-navy sm:text-7xl">Built on people.<br /><span className="text-brand">Proven on site.</span></h2>
           </Reveal>
           <Reveal delay={100}>
-            <p className="max-w-md text-lg text-on-dark-muted lg:ml-auto">Businesses across Singapore rely on us for workforce and construction support that simply gets the job done.</p>
+            <p className="max-w-md text-lg text-muted-foreground lg:ml-auto">Businesses across Singapore rely on us for workforce and construction support that simply gets the job done.</p>
           </Reveal>
         </div>
         <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map(({ icon: Icon, t, d }, k) => (
             <Reveal key={t} delay={k * 120}>
-              <div className="group relative h-full overflow-hidden rounded-tr-[2.5rem] border border-on-dark/15 bg-on-dark/5 p-8 backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:bg-brand">
-                <span className="absolute right-6 top-4 font-display text-6xl font-extrabold text-on-dark/10">{String(k + 1).padStart(2, "0")}</span>
+              <div className="group relative h-full overflow-hidden rounded-tr-[2.5rem] border border-border bg-background shadow-lg p-8 backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:bg-brand">
+                <span className="absolute right-6 top-4 font-display text-6xl font-extrabold text-navy/10">{String(k + 1).padStart(2, "0")}</span>
                 <span className="grid h-14 w-14 place-items-center rounded-full bg-brand text-on-dark transition group-hover:bg-navy"><Icon className="h-6 w-6" /></span>
-                <h3 className="mt-8 font-display text-xl font-bold text-on-dark">{t}</h3>
-                <p className="mt-2 text-sm text-on-dark-muted group-hover:text-on-dark">{d}</p>
+                <h3 className="mt-8 font-display text-xl font-bold text-navy group-hover:text-on-dark">{t}</h3>
+                <p className="mt-2 text-sm text-muted-foreground group-hover:text-on-dark">{d}</p>
                 <span className="absolute bottom-0 left-0 h-1 w-full bg-brand-light" />
               </div>
             </Reveal>
@@ -172,8 +172,8 @@ export function Testimonials() {
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {quotes.map((x, k) => (
             <Reveal key={x.n} delay={k * 120}>
-              <figure className={cn("relative flex h-full flex-col rounded-tr-[3rem] p-10", k === 1 ? "bg-navy shadow-2xl" : "border border-border bg-offwhite")}>
-                <span className={cn("font-display text-8xl leading-none", k === 1 ? "text-brand-light" : "text-brand/50")}>“</span>
+              <figure className={cn("relative flex h-full flex-col rounded-tr-[3rem] p-10", k === 1 ? "bg-brand shadow-2xl" : "border border-border bg-offwhite")}>
+                <span className={cn("font-display text-8xl leading-none", k === 1 ? "text-on-dark/60" : "text-brand/50")}>“</span>
                 <blockquote className={cn("-mt-6 flex-1 text-lg leading-relaxed", k === 1 ? "text-on-dark" : "text-foreground/80")}>{x.q}</blockquote>
                 <figcaption className={cn("mt-8 flex items-center gap-4 border-t pt-6", k === 1 ? "border-on-dark/15" : "border-border")}>
                   <img src={x.i} alt={x.n} loading="lazy" className="h-12 w-12 rounded-full object-cover ring-2 ring-brand" />
