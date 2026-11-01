@@ -183,7 +183,7 @@ export function Contact() {
 
 /* ---------- Footer ---------- */
 
-const footLinks = [{label:"About Us",to:"/about"},{label:"Services",to:"/services"},{label:"Projects",to:"/projects"},{label:"Gallery",to:"/gallery"},{label:"Testimonials",to:"/testimonials"},{label:"Contact Us",to:"/contact-us"}] as const;
+const footLinks = [{label:"About Us",to:"/about"},{label:"Services",to:"/services"},{label:"Projects",to:"/projects"},{label:"Gallery",to:"/gallery"},{label:"Testimonials",to:"/testimonials"},{label:"Get a Quote",to:"/get-a-quote"},{label:"Contact Us",to:"/contact-us"}] as const;
 function FootTitle({ children }: { children: string }) {
   return (
     <div className="mb-8">

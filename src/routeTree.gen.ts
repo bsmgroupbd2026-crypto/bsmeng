@@ -18,6 +18,7 @@ import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as DrywallPartitionWorkRouteImport } from './routes/drywall-partition-work'
 import { Route as ElectricalWorkRouteImport } from './routes/electrical-work'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as GetAQuoteRouteImport } from './routes/get-a-quote'
 import { Route as ManpowerSupplyRouteImport } from './routes/manpower-supply'
 import { Route as PaintingWorkRouteImport } from './routes/painting-work'
 import { Route as PlumbingWorkRouteImport } from './routes/plumbing-work'
@@ -72,6 +73,11 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GetAQuoteRoute = GetAQuoteRouteImport.update({
+  id: '/get-a-quote',
+  path: '/get-a-quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManpowerSupplyRoute = ManpowerSupplyRouteImport.update({
   id: '/manpower-supply',
   path: '/manpower-supply',
@@ -124,6 +130,7 @@ export interface FileRoutesByFullPath {
   '/drywall-partition-work': typeof DrywallPartitionWorkRoute
   '/electrical-work': typeof ElectricalWorkRoute
   '/gallery': typeof GalleryRoute
+  '/get-a-quote': typeof GetAQuoteRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/painting-work': typeof PaintingWorkRoute
   '/plumbing-work': typeof PlumbingWorkRoute
@@ -143,6 +150,7 @@ export interface FileRoutesByTo {
   '/drywall-partition-work': typeof DrywallPartitionWorkRoute
   '/electrical-work': typeof ElectricalWorkRoute
   '/gallery': typeof GalleryRoute
+  '/get-a-quote': typeof GetAQuoteRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/painting-work': typeof PaintingWorkRoute
   '/plumbing-work': typeof PlumbingWorkRoute
@@ -163,6 +171,7 @@ export interface FileRoutesById {
   '/drywall-partition-work': typeof DrywallPartitionWorkRoute
   '/electrical-work': typeof ElectricalWorkRoute
   '/gallery': typeof GalleryRoute
+  '/get-a-quote': typeof GetAQuoteRoute
   '/manpower-supply': typeof ManpowerSupplyRoute
   '/painting-work': typeof PaintingWorkRoute
   '/plumbing-work': typeof PlumbingWorkRoute
@@ -184,6 +193,7 @@ export interface FileRouteTypes {
     | '/drywall-partition-work'
     | '/electrical-work'
     | '/gallery'
+    | '/get-a-quote'
     | '/manpower-supply'
     | '/painting-work'
     | '/plumbing-work'
@@ -203,6 +213,7 @@ export interface FileRouteTypes {
     | '/drywall-partition-work'
     | '/electrical-work'
     | '/gallery'
+    | '/get-a-quote'
     | '/manpower-supply'
     | '/painting-work'
     | '/plumbing-work'
@@ -222,6 +233,7 @@ export interface FileRouteTypes {
     | '/drywall-partition-work'
     | '/electrical-work'
     | '/gallery'
+    | '/get-a-quote'
     | '/manpower-supply'
     | '/painting-work'
     | '/plumbing-work'
@@ -242,6 +254,7 @@ export interface RootRouteChildren {
   DrywallPartitionWorkRoute: typeof DrywallPartitionWorkRoute
   ElectricalWorkRoute: typeof ElectricalWorkRoute
   GalleryRoute: typeof GalleryRoute
+  GetAQuoteRoute: typeof GetAQuoteRoute
   ManpowerSupplyRoute: typeof ManpowerSupplyRoute
   PaintingWorkRoute: typeof PaintingWorkRoute
   PlumbingWorkRoute: typeof PlumbingWorkRoute
@@ -317,6 +330,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/get-a-quote': {
+      id: '/get-a-quote'
+      path: '/get-a-quote'
+      fullPath: '/get-a-quote'
+      preLoaderRoute: typeof GetAQuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/manpower-supply': {
       id: '/manpower-supply'
       path: '/manpower-supply'
@@ -386,6 +406,7 @@ const rootRouteChildren: RootRouteChildren = {
   DrywallPartitionWorkRoute: DrywallPartitionWorkRoute,
   ElectricalWorkRoute: ElectricalWorkRoute,
   GalleryRoute: GalleryRoute,
+  GetAQuoteRoute: GetAQuoteRoute,
   ManpowerSupplyRoute: ManpowerSupplyRoute,
   PaintingWorkRoute: PaintingWorkRoute,
   PlumbingWorkRoute: PlumbingWorkRoute,
