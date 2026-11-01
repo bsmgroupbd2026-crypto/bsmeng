@@ -9,8 +9,8 @@ import { serviceLinks } from "./service-links";
 
 export function ServicePageLayout({ title, image, imageAlt, children }: {
   title: string;
-  image?: string;
-  imageAlt?: string;
+  image?: string | undefined;
+  imageAlt?: string | undefined;
   children: ReactNode;
 }) {
   return <><Header /><main className="service-page">
